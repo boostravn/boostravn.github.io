@@ -1,0 +1,21 @@
+---
+import { landing } from "../content/landing";
+import ProblemSelector from "../islands/ProblemSelector.tsx";
+const { problems } = landing;
+---
+<section id="thanh-phan" class="py-16 lg:py-24" aria-labelledby="problems-heading">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center">
+      <span class="section-eyebrow bg-(--color-cream-strong) text-(--color-forest)">
+        {problems.badge}
+      </span>
+      <h2 id="problems-heading" class="mt-5 text-3xl sm:text-4xl lg:text-[40px] font-bold text-(--color-forest)">
+        {problems.heading}
+      </h2>
+    </div>
+
+    <div class="mt-10">
+      <ProblemSelector client:visible items={problems.items} defaultPrompt={problems.defaultPrompt} />
+    </div>
+  </div>
+</section>

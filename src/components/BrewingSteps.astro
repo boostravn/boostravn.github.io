@@ -1,0 +1,34 @@
+---
+import { landing } from "../content/landing";
+import TeaTimer from "../islands/TeaTimer.tsx";
+const { brewing } = landing;
+---
+<section id="cach-u" class="py-16 lg:py-24 bg-(--color-cream-soft)/40" aria-labelledby="brewing-heading">
+  <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-center">
+    <div>
+      <span class="section-eyebrow bg-(--color-cream-strong) text-(--color-forest)">
+        {brewing.badge}
+      </span>
+      <h2 id="brewing-heading" class="mt-5 text-3xl sm:text-4xl lg:text-[40px] font-bold text-(--color-forest)">
+        {brewing.heading}
+      </h2>
+
+      <ol class="mt-8 space-y-5">
+        {brewing.steps.map((step) => (
+          <li class="flex gap-4 items-start">
+            <span class="shrink-0 w-8 h-8 rounded-full bg-(--color-forest) text-(--color-gold) font-bold text-sm flex items-center justify-center">
+              {step.n}
+            </span>
+            <p class="text-sm sm:text-base leading-relaxed text-(--color-forest)">
+              <strong class="font-semibold">{step.title}:</strong> {step.body}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div>
+      <TeaTimer client:visible labels={brewing.timer} />
+    </div>
+  </div>
+</section>

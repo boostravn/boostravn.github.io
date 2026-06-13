@@ -1,0 +1,84 @@
+---
+import { landing } from "../content/landing";
+import { Facebook, Instagram, Music2, MessageCircle, Globe, Phone, Mail } from "lucide-react";
+import type { IconName } from "../content/landing";
+
+const iconMap: Record<string, typeof Facebook> = {
+  Facebook,
+  Instagram,
+  Music2,
+  MessageCircle,
+  Globe,
+  Phone,
+  Mail,
+};
+
+const { footer } = landing;
+const { explore, contact } = footer.columns;
+---
+<footer id="cua-hang" class="bg-(--color-forest-deep) text-(--color-cream)">
+  <div class="max-w-[1200px] mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+      <div>
+        <img src="/images/logo-light.svg" alt="Boostra" width="160" height="64" class="h-14 w-auto" />
+        <p class="mt-5 text-sm leading-relaxed text-(--color-cream)/80 max-w-sm">
+          {footer.tagline}
+        </p>
+        <div class="mt-6 flex gap-3">
+          {footer.socials.map((s) => {
+            const Icon = iconMap[s.icon as IconName];
+            return (
+              <a
+                href={s.href}
+                aria-label={s.label}
+                class="w-10 h-10 rounded-full bg-(--color-forest) hover:bg-(--color-moss) flex items-center justify-center text-(--color-cream) transition-colors focus-ring-gold"
+              >
+                {Icon ? <Icon size={16} aria-hidden="true" /> : null}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-bold tracking-[0.15em] text-(--color-gold)">{explore.heading}</h3>
+        <ul class="mt-5 space-y-3 text-sm">
+          {explore.links.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class="text-(--color-cream)/85 hover:text-(--color-gold) transition-colors focus-ring-gold rounded-sm"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-bold tracking-[0.15em] text-(--color-gold)">{contact.heading}</h3>
+        <ul class="mt-5 space-y-4 text-sm">
+          {contact.items.map((item) => {
+            const Icon = iconMap[item.icon as IconName];
+            return (
+              <li class="flex gap-3 text-(--color-cream)/85">
+                <span class="shrink-0 text-(--color-gold) mt-0.5">
+                  {Icon ? <Icon size={16} aria-hidden="true" /> : null}
+                </span>
+                <span class="leading-relaxed">{item.text}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-(--color-cream)/15 text-center space-y-3">
+      <p class="text-xs text-(--color-cream)/75">{footer.copyright}</p>
+      <p class="text-[11px] text-(--color-cream)/55 leading-relaxed max-w-3xl mx-auto">
+        {footer.disclaimer}
+      </p>
+    </div>
+  </div>
+</footer>

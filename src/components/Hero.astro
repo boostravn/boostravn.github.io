@@ -1,0 +1,64 @@
+---
+import { landing } from "../content/landing";
+import ProductCard from "./ProductCard.astro";
+import { Sparkles } from "lucide-react";
+const { hero } = landing;
+---
+<section id="top" class="relative overflow-hidden py-16 lg:py-24">
+  <div aria-hidden="true" class="hidden lg:block absolute top-12 left-8 text-(--color-leaf)/30">
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
+      <path d="M10 30c0-15 12-22 28-24-2 18-12 28-28 28z" />
+    </svg>
+  </div>
+  <div aria-hidden="true" class="hidden lg:block absolute bottom-12 right-8 text-(--color-leaf)/30 rotate-180">
+    <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
+      <path d="M10 30c0-15 12-22 28-24-2 18-12 28-28 28z" />
+    </svg>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+    <div>
+      <span class="section-eyebrow border-2 border-(--color-forest)/30 bg-(--color-cream-soft) text-(--color-forest)">
+        <Sparkles size={14} aria-hidden="true" />
+        {hero.badge}
+      </span>
+
+      <h1 class="mt-6 text-4xl sm:text-5xl lg:text-[56px] leading-[1.1] font-bold tracking-tight">
+        <span class="block text-(--color-forest)">{hero.title.line1}</span>
+        <span class="block text-(--color-moss)">{hero.title.line2}</span>
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg leading-relaxed text-(--color-forest)/85 max-w-xl" set:html={hero.bodyHtml} />
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href={hero.primaryCta.href}
+          class="inline-flex items-center gap-2 bg-(--color-forest) hover:bg-(--color-forest-deep) text-(--color-cream) font-semibold px-6 py-3.5 rounded-xl transition-colors focus-ring-gold"
+        >
+          {hero.primaryCta.label}
+        </a>
+        <a
+          href={hero.secondaryCta.href}
+          class="inline-flex items-center gap-2 bg-(--color-cream) hover:bg-(--color-cream-soft) text-(--color-forest) font-semibold px-6 py-3.5 rounded-xl border-2 border-(--color-forest) transition-colors focus-ring-forest"
+        >
+          {hero.secondaryCta.label}
+        </a>
+      </div>
+
+      <div class="mt-10 pt-8 border-t border-(--color-forest)/15 grid grid-cols-3 gap-6 max-w-xl">
+        {hero.stats.map((stat) => (
+          <div>
+            <div class="text-2xl sm:text-3xl font-bold text-(--color-forest)">{stat.value}</div>
+            <div class="mt-1 text-[11px] font-medium tracking-[0.1em] uppercase text-(--color-forest)/60">
+              {stat.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <ProductCard />
+    </div>
+  </div>
+</section>

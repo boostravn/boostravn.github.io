@@ -1,0 +1,39 @@
+---
+import { landing } from "../content/landing";
+const { brand } = landing;
+---
+<section id="gioi-thieu" class="py-16 lg:py-24 bg-(--color-cream-soft)/40" aria-labelledby="brand-heading">
+  <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+    <div class="rounded-3xl bg-(--color-forest-deep) text-(--color-cream) p-8 sm:p-10">
+      <span class="section-eyebrow bg-(--color-gold)/15 text-(--color-gold)">
+        {brand.leftBadge}
+      </span>
+      <h3 class="mt-5 text-2xl sm:text-3xl font-bold text-(--color-cream) tracking-wide">
+        {brand.leftHeading}
+      </h3>
+      <p class="mt-5 text-(--color-cream)/85 leading-relaxed">
+        {brand.leftBody}
+      </p>
+      <blockquote class="mt-6 border-l-4 border-(--color-gold) pl-4 py-1 italic text-(--color-cream)/90 text-sm">
+        "{brand.leftQuote}"
+      </blockquote>
+    </div>
+
+    <div>
+      <span class="section-eyebrow bg-(--color-cream-strong) text-(--color-forest)">
+        {brand.rightBadge}
+      </span>
+      <h2 id="brand-heading" class="mt-5 text-3xl sm:text-4xl lg:text-[40px] leading-[1.15] font-bold text-(--color-forest)">
+        {brand.rightHeading}
+      </h2>
+      <p class="mt-5 text-(--color-forest)/85 leading-relaxed">
+        {brand.rightBody}
+      </p>
+
+      <div class="mt-6 rounded-xl bg-(--color-gold-soft) border border-(--color-gold) p-4 text-sm leading-relaxed text-(--color-forest)">
+        <span aria-hidden="true" class="mr-1">{brand.callout.emoji}</span>
+        <strong>{brand.callout.lead}</strong> {brand.callout.body}
+      </div>
+    </div>
+  </div>
+</section>

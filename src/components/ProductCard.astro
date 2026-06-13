@@ -1,0 +1,35 @@
+---
+import { landing } from "../content/landing";
+const { product } = landing.hero;
+---
+<div class="relative">
+  <div class="relative rounded-3xl bg-(--color-forest-deep) border-2 border-(--color-gold) p-8 sm:p-10 shadow-[0_30px_60px_-20px_rgba(22,32,24,0.5)]">
+    <div class="flex items-center justify-between mb-10">
+      <span class="text-(--color-gold) text-[11px] font-semibold tracking-[0.2em] uppercase">
+        {product.tagTop}
+      </span>
+      <span class="inline-flex items-center px-3 py-1 rounded-full bg-(--color-gold) text-(--color-forest) text-xs font-semibold">
+        {product.tagRight}
+      </span>
+    </div>
+
+    <div class="flex flex-col items-center text-center gap-5 py-8">
+      <img src="/images/logo-light.svg" alt="" width="180" height="72" class="w-44 h-auto" />
+      <div class="w-32 h-px bg-(--color-gold)/40"></div>
+      <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-(--color-gold)/60 text-(--color-cream) text-sm font-medium">
+        {product.title}
+      </div>
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-(--color-gold)/20 text-center text-(--color-cream)/80 text-sm">
+      {product.footer}
+    </div>
+  </div>
+
+  <div
+    class="absolute -bottom-4 -right-2 sm:-right-6 rotate-[-8deg] bg-(--color-gold) text-(--color-forest) rounded-2xl px-4 py-3 text-sm font-semibold leading-snug shadow-lg max-w-[180px]"
+    aria-hidden="true"
+  >
+    <span class="block">{product.stickerEmoji} {product.sticker}</span>
+  </div>
+</div>
