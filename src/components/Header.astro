@@ -1,12 +1,13 @@
 ---
 import { landing } from "../content/landing";
 import { ShoppingBag, Menu } from "lucide-react";
+import Logo from "./Logo.astro";
 const { nav } = landing;
 ---
 <header class="sticky top-0 z-50 bg-(--color-cream)/95 backdrop-blur border-b border-(--color-forest)/10">
   <div class="max-w-[1200px] mx-auto px-6 py-3 flex items-center gap-4">
     <a href="#top" class="flex items-center gap-2 shrink-0 focus-ring-forest rounded-md" aria-label="Boostra trang chủ">
-      <img src={nav.logo.src} alt={nav.logo.alt} width="120" height="48" class="h-12 w-auto" />
+      <Logo variant="dark" size={120} class="h-12 w-auto" />
     </a>
 
     <nav class="hidden lg:flex items-center gap-7 mx-auto" aria-label="Điều hướng chính">

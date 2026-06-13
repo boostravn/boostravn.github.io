@@ -1,6 +1,7 @@
 ---
 import { landing } from "../content/landing";
 import { Facebook, Instagram, Music2, MessageCircle, Globe, Phone, Mail } from "lucide-react";
+import Logo from "./Logo.astro";
 import type { IconName } from "../content/landing";
 
 const iconMap: Record<string, typeof Facebook> = {
@@ -20,7 +21,7 @@ const { explore, contact } = footer.columns;
   <div class="max-w-[1200px] mx-auto px-6 py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
       <div>
-        <img src="/images/logo-light.svg" alt="Boostra" width="160" height="64" class="h-14 w-auto" />
+        <Logo variant="light" size={180} class="h-14 w-auto" />
         <p class="mt-5 text-sm leading-relaxed text-(--color-cream)/80 max-w-sm">
           {footer.tagline}
         </p>

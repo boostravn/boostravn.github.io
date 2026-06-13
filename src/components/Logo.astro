@@ -1,0 +1,69 @@
+---
+interface Props {
+  variant?: "dark" | "light";
+  size?: number;
+  class?: string;
+  ariaLabel?: string;
+}
+
+const {
+  variant = "dark",
+  size = 220,
+  class: className = "",
+  ariaLabel = "Boostra — Herbal Tea, EST 2027",
+} = Astro.props;
+
+const ink =
+  variant === "light" ? "var(--color-cream)" : "var(--color-brand-green)";
+const ratio = 540 / 800;
+const height = Math.round(size * ratio);
+
+const uid = Math.random().toString(36).slice(2, 9);
+const maskId = `leaf-midrib-${uid}`;
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 800 540"
+  width={size}
+  height={height}
+  role="img"
+  aria-label={ariaLabel}
+  class={className}
+  preserveAspectRatio="xMidYMid meet"
+>
+  <defs>
+    <mask id={maskId} maskUnits="userSpaceOnUse" x="0" y="0" width="800" height="540">
+      <rect x="0" y="0" width="800" height="540" fill="white" />
+      <path
+        d="M468 252 C 535 215 600 175 695 78"
+        fill="none"
+        stroke="black"
+        stroke-width="10"
+        stroke-linecap="round"
+      />
+    </mask>
+  </defs>
+
+  <path
+    d="M455 260
+       C 445 175 475 105 545 80
+       C 595 60 665 56 700 64
+       C 696 102 670 158 615 200
+       C 555 244 490 262 455 260 Z"
+    fill={ink}
+    mask={`url(#${maskId})`}
+  />
+
+  <text
+    x="400"
+    y="408"
+    text-anchor="middle"
+    fill={ink}
+    style="font-family: var(--font-display); font-weight: 700; font-size: 168px; letter-spacing: -2px;"
+  >Boostra</text>
+
+  <g fill={ink} style="font-family: var(--font-display); font-weight: 500; font-size: 30px; letter-spacing: 6px;">
+    <text x="230" y="490" text-anchor="middle">EST 2027</text>
+    <text x="570" y="490" text-anchor="middle">HERBAL TEA</text>
+  </g>
+</svg>

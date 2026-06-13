@@ -1,5 +1,6 @@
 ---
 import { landing } from "../content/landing";
+import Logo from "./Logo.astro";
 const { product } = landing.hero;
 ---
 <div class="relative">
@@ -14,7 +15,7 @@ const { product } = landing.hero;
     </div>
 
     <div class="flex flex-col items-center text-center gap-5 py-8">
-      <img src="/images/logo-light.svg" alt="" width="180" height="72" class="w-44 h-auto" />
+      <Logo variant="light" size={200} class="w-44 h-auto" ariaLabel="" />
       <div class="w-32 h-px bg-(--color-gold)/40"></div>
       <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-(--color-gold)/60 text-(--color-cream) text-sm font-medium">
         {product.title}

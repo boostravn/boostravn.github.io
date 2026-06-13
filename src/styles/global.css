@@ -16,8 +16,10 @@
   --color-tag-orange: #d97757;
   --color-tag-blue: #7b9dba;
   --color-tag-gold: #d4a93e;
+  --color-brand-green: #2f5f2c;
 
   --font-sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Quicksand", "Be Vietnam Pro", system-ui, sans-serif;
 
   --radius-pill: 9999px;
 }
