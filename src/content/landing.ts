@@ -56,7 +56,7 @@ export interface ActivityItem {
 export const landing = {
   banner: {
     emoji: "⚡",
-    text: "Tặng ngay Bình Thể Thao Cao Cấp khi mua Combo 2 Hộp Boostra hôm nay!",
+    text: "Ưu đãi ra mắt: Tặng Bình Giữ Nhiệt In Logo Boostra khi mua Combo 2 Hộp Trà Dây Hồng Sâm cho đơn hàng đầu tiên.",
   },
   nav: {
     logo: { src: "/images/logo.svg", alt: "Boostra" },
