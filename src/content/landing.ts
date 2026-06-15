@@ -72,8 +72,8 @@ export const landing = {
     cta: { label: "Mua Ngay", href: "#cua-hang" },
   },
   hero: {
-    badge: "Xu Hướng Tỉnh Táo Lành Mạnh Mới",
-    title: { line1: "Tỉnh Thức Tự Nhiên", line2: "Bảo Vệ Dạ Dầy" },
+    badge: "GIẢI PHÁP TỈNH TÁO CHO GEN Z & GEN Y",
+    title: { line1: "Tỉnh Thức Tự Nhiên", line2: "Bảo Vệ Dạ Dày" },
     bodyHtml:
       'Sự kết hợp hoàn hảo từ <strong>Trà Dây Tây Bắc</strong> hỗ trợ tiêu hóa, trung hòa axit và <span class="text-(--color-rust) font-semibold">Hồng Sâm 6 Năm Tuổi</span> bồi bổ trí não. Tỉnh táo êm dịu, không lo bồn chồn lo âu hay sập nguồn năng lượng đột ngột.',
     primaryCta: { label: "Mua Thử Ngay", href: "#cua-hang" },
