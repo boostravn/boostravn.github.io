@@ -1,5 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
+declare global {
+  interface Window {
+    posthog?: {
+      capture: (event: string, properties?: Record<string, unknown>) => void;
+    };
+  }
+}
+
+function trackStart(initialSeconds: number, resumed: boolean) {
+  if (typeof window === "undefined") return;
+  window.posthog?.capture("tea_timer_started", {
+    initial_seconds: initialSeconds,
+    resumed,
+  });
+}
+
 interface CelebrateConfig {
   title: string;
   body: string;
@@ -214,9 +230,13 @@ export default function TeaTimer({ labels }: Props) {
   }, [status]);
 
   const onPrimary = () => {
-    if (status === "idle") setStatus("running");
-    else if (status === "running") setStatus("idle");
-    else {
+    if (status === "idle") {
+      trackStart(secondsLeft, secondsLeft !== labels.defaultSeconds);
+      setStatus("running");
+    } else if (status === "running") {
+      setStatus("idle");
+    } else {
+      trackStart(labels.defaultSeconds, false);
       setSecondsLeft(labels.defaultSeconds);
       setCopied(false);
       setStatus("running");
