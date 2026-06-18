@@ -41,5 +41,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://boostravn.g
   </head>
   <body class="min-h-screen bg-(--color-cream) text-(--color-forest)">
     <slot />
+    <script>
+      import { initAnalytics } from "../lib/analytics.ts";
+      initAnalytics();
+    </script>
   </body>
 </html>
