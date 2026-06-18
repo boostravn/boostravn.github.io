@@ -19,20 +19,17 @@ const { products } = landing;
       {products.items.map((item) => {
         const isHighlight = item.highlight === true;
         const cardStyle = isHighlight
-          ? "bg-(--color-forest-deep) text-(--color-cream) border-(--color-gold)"
-          : "bg-(--color-cream-soft) text-(--color-forest) border-(--color-forest)/15";
+          ? "bg-(--color-cream-strong) border-(--color-gold) shadow-[0_18px_40px_-24px_rgba(47,95,44,0.35)]"
+          : "bg-(--color-cream-soft) border-(--color-forest)/15";
         const priceColor = isHighlight
-          ? "text-(--color-gold)"
+          ? "text-(--color-rust)"
           : "text-(--color-forest)";
-        const bodyColor = isHighlight
-          ? "text-(--color-cream)/85"
-          : "text-(--color-forest)/80";
         const badgeStyle =
           item.badge.tone === "gold"
             ? "bg-(--color-gold) text-(--color-forest)"
-            : "bg-(--color-moss) text-(--color-cream)";
+            : "bg-(--color-forest)/10 text-(--color-forest)";
         return (
-          <article class={`rounded-3xl border-2 ${cardStyle} p-7 sm:p-9 flex flex-col`}>
+          <article class={`relative rounded-3xl border-2 ${cardStyle} p-7 sm:p-9 flex flex-col text-(--color-forest)`}>
             <div class="flex items-center justify-between gap-3">
               <span class={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-[0.1em] uppercase ${badgeStyle}`}>
                 {item.badge.label}
@@ -42,7 +39,7 @@ const { products } = landing;
             <h3 class="mt-6 text-xl sm:text-2xl font-bold leading-snug">
               {item.name}
             </h3>
-            <p class={`mt-3 text-sm sm:text-[15px] leading-relaxed ${bodyColor} flex-1`}>
+            <p class="mt-3 text-sm sm:text-[15px] leading-relaxed text-(--color-forest)/80 flex-1">
               {item.description}
             </p>
           </article>
