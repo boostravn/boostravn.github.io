@@ -271,6 +271,16 @@ export const landing = {
       startLabel: "Bắt Đầu Ủ",
       pauseLabel: "Tạm Dừng",
       resetLabel: "Đặt Lại",
+      celebrate: {
+        title: "Trà đã sẵn sàng!",
+        body: "Bạn đã chờ đủ — hãy thưởng cho mình bằng ưu đãi nhỏ này.",
+        promoLabel: "Mã giảm 10% cho đơn đầu tiên",
+        promoCode: "TINHTHUC10",
+        copyLabel: "Sao chép mã",
+        copiedLabel: "Đã sao chép ✓",
+        ctaLabel: "Dùng ngay",
+        ctaHref: "#cua-hang",
+      },
     },
   },
   products: {
