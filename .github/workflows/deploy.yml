@@ -31,9 +31,6 @@ jobs:
         run: npm ci
 
       - name: Build Astro
-        env:
-          PUBLIC_POSTHOG_KEY: ${{ secrets.PUBLIC_POSTHOG_KEY }}
-          PUBLIC_POSTHOG_HOST: ${{ secrets.PUBLIC_POSTHOG_HOST }}
         run: npm run build
 
       - name: Setup Pages

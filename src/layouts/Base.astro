@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import PostHog from "../components/posthog.astro";
 
 interface Props {
   title?: string;
@@ -38,12 +39,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://boostravn.g
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Quicksand:wght@500;700&display=swap"
     />
+
+    <PostHog />
   </head>
   <body class="min-h-screen bg-(--color-cream) text-(--color-forest)">
     <slot />
-    <script>
-      import { initAnalytics } from "../lib/analytics.ts";
-      initAnalytics();
-    </script>
   </body>
 </html>
