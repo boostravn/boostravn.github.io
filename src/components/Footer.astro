@@ -1,6 +1,14 @@
 ---
+import {
+  Facebook,
+  Instagram,
+  Music2,
+  Mail,
+  MapPin,
+  ShoppingBag,
+  ShoppingCart,
+} from "lucide-react";
 import { landing } from "../content/landing";
-import { Facebook, Instagram, Music2, MessageCircle, Globe, Phone, Mail } from "lucide-react";
 import Logo from "./Logo.astro";
 import type { IconName } from "../content/landing";
 
@@ -8,20 +16,25 @@ const iconMap: Record<string, typeof Facebook> = {
   Facebook,
   Instagram,
   Music2,
-  MessageCircle,
-  Globe,
-  Phone,
   Mail,
+  MapPin,
+  ShoppingBag,
+  ShoppingCart,
 };
 
 const { footer } = landing;
 const { explore, contact } = footer.columns;
 ---
-<footer id="cua-hang" class="bg-(--color-forest-deep) text-(--color-cream)">
+<footer class="bg-(--color-forest-deep) text-(--color-cream)">
   <div class="max-w-[1200px] mx-auto px-6 py-16">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
       <div>
-        <Logo variant="light" size={180} class="h-14 w-auto" />
+        <span class="text-[11px] font-semibold tracking-[0.2em] uppercase text-(--color-gold)">
+          {footer.badge}
+        </span>
+        <div class="mt-4">
+          <Logo variant="light" size={180} class="h-14 w-auto" />
+        </div>
         <p class="mt-5 text-sm leading-relaxed text-(--color-cream)/80 max-w-sm">
           {footer.tagline}
         </p>

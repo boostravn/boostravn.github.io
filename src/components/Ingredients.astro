@@ -1,0 +1,57 @@
+---
+import { landing } from "../content/landing";
+import { Check, Leaf, Sparkles } from "lucide-react";
+
+const { ingredients } = landing;
+---
+<section id="thanh-phan" class="py-16 lg:py-24" aria-labelledby="ingredients-heading">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center">
+      <span class="section-eyebrow bg-(--color-cream-strong) text-(--color-forest)">
+        {ingredients.badge}
+      </span>
+      <h2 id="ingredients-heading" class="mt-5 text-3xl sm:text-4xl lg:text-[40px] font-bold text-(--color-forest)">
+        {ingredients.heading}
+      </h2>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      {ingredients.items.map((item) => {
+        const isRust = item.accent === "rust";
+        const Icon = isRust ? Sparkles : Leaf;
+        const accentBorder = isRust
+          ? "border-(--color-rust)/30"
+          : "border-(--color-forest)/15";
+        const accentBadge = isRust
+          ? "bg-(--color-rust)/10 text-(--color-rust)"
+          : "bg-(--color-forest)/10 text-(--color-forest)";
+        return (
+          <article class={`rounded-3xl bg-(--color-cream-soft) border-2 ${accentBorder} p-7 sm:p-9`}>
+            <div class={`inline-flex items-center justify-center w-14 h-14 rounded-2xl ${accentBadge}`}>
+              <Icon size={24} aria-hidden="true" />
+            </div>
+            <h3 class="mt-5 text-2xl sm:text-3xl font-bold text-(--color-forest)">
+              {item.name}
+            </h3>
+            <p class="mt-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.08em] text-(--color-forest)/65">
+              {item.subtitle}
+            </p>
+            <p class="mt-4 text-sm sm:text-base leading-relaxed text-(--color-forest)/85">
+              {item.description}
+            </p>
+            <ul class="mt-6 space-y-3">
+              {item.bullets.map((b) => (
+                <li class="flex items-start gap-3 text-sm sm:text-[15px] leading-relaxed text-(--color-forest)">
+                  <span class={`shrink-0 mt-0.5 inline-flex items-center justify-center w-5 h-5 rounded-full ${accentBadge}`}>
+                    <Check size={12} aria-hidden="true" strokeWidth={3} />
+                  </span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>

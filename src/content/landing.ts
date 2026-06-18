@@ -16,9 +16,12 @@ export type IconName =
   | "Facebook"
   | "Instagram"
   | "Music2"
-  | "ShoppingBag";
-
-export type TagColor = "green" | "orange" | "blue" | "gold";
+  | "ShoppingBag"
+  | "Activity"
+  | "MapPin"
+  | "ShoppingCart"
+  | "Check"
+  | "Sparkles";
 
 export interface Solution {
   title: string;
@@ -31,6 +34,7 @@ export interface ProblemItem {
   iconBg: string;
   iconColor: string;
   label: string;
+  fit: string;
   solution: Solution;
 }
 
@@ -46,11 +50,20 @@ export interface BrewingStep {
   body: string;
 }
 
-export interface ActivityItem {
-  tag: { label: string; color: TagColor };
-  title: string;
-  body: string;
-  footer: { label: string; icon: IconName };
+export interface IngredientItem {
+  name: string;
+  subtitle: string;
+  description: string;
+  bullets: string[];
+  accent: "forest" | "rust";
+}
+
+export interface ProductItem {
+  name: string;
+  badge: { label: string; tone: "gold" | "moss" };
+  price: string;
+  description: string;
+  highlight?: boolean;
 }
 
 export const landing = {
@@ -63,11 +76,9 @@ export const landing = {
     links: [
       { label: "Giới Thiệu", href: "#gioi-thieu" },
       { label: "Thành Phần", href: "#thanh-phan" },
-      { label: "Đối Tác", href: "#doi-tac" },
       { label: "Lợi Ích", href: "#loi-ich" },
       { label: "Cách Ủ", href: "#cach-u" },
       { label: "Cửa Hàng", href: "#cua-hang" },
-      { label: "Hoạt Động", href: "#hoat-dong" },
     ],
     cta: { label: "Mua Ngay", href: "#cua-hang" },
   },
@@ -75,17 +86,20 @@ export const landing = {
     badge: "GIẢI PHÁP TỈNH TÁO CHO GEN Z & GEN Y",
     title: { line1: "Tỉnh Thức Tự Nhiên", line2: "Bảo Vệ Dạ Dày" },
     bodyHtml:
-      'Sự kết hợp hoàn hảo từ <strong>Trà Dây Tây Bắc</strong> hỗ trợ tiêu hóa, trung hòa axit và <span class="text-(--color-rust) font-semibold">Hồng Sâm 6 Năm Tuổi</span> bồi bổ trí não. Tỉnh táo êm dịu, không lo bồn chồn lo âu hay sập nguồn năng lượng đột ngột.',
+      'Sự kết hợp hoàn hảo giữa <strong>Trà Dây Huế</strong> hỗ trợ làm lành niêm mạc, trung hòa axit dịch vị và <span class="text-(--color-rust) font-semibold">Hồng Sâm</span> bồi bổ năng lượng tự nhiên. Tỉnh táo bền bỉ suốt ngày dài học tập, làm việc — không bồn chồn, không tụt năng lượng, không hại dạ dày.',
     primaryCta: { label: "Mua Thử Ngay", href: "#cua-hang" },
     secondaryCta: { label: "Xem Câu Chuyện", href: "#gioi-thieu" },
     stats: [
-      { value: "100%", label: "Thảo Mộc Sạch" },
-      { value: "0%", label: "Đường Tinh Luyện" },
-      { value: "CE / FDA", label: "Đạt Chuẩn Quốc Tế" },
+      { value: "100%", label: "Nguyên Liệu Thảo Mộc Tự Nhiên" },
+      { value: "0%", label: "Chất Bảo Quản" },
+      { value: "0%", label: "Cafeine Tổng Hợp" },
     ],
     product: {
+      // Set `image` to swap the placeholder logo for a real product shot.
+      // Recommended: 1080×1440 PNG (3:4) with transparent background.
+      image: null as null | { src: string; alt: string },
       tagTop: "PREMIUM HERB BLEND",
-      tagRight: "20 GÓI LỌC",
+      tagRight: "20 TÚI LỌC",
       title: "Trà Dây Hồng Sâm Thượng Hạng",
       footer: "Tỉnh thức tự nhiên • Êm dịu dạ dày",
       sticker: "Vị ngọt sâm thanh mát, cực ngon!",
@@ -93,8 +107,8 @@ export const landing = {
     },
   },
   problems: {
-    badge: "LỰA CHỌN GIẢI PHÁP",
-    heading: "Bạn Gặp Rắc Rối Gì Khi Cần Giữ Tỉnh Táo?",
+    badge: "BẠN ĐANG GẶP VẤN ĐỀ GÌ?",
+    heading: "Caffeine giúp tỉnh táo, nhưng cũng để lại hệ lụy",
     items: [
       {
         id: "dau-da-day",
@@ -102,9 +116,10 @@ export const landing = {
         iconBg: "#FBD9C9",
         iconColor: "#C2410C",
         label: "Đau Dạ Dày",
+        fit: "Phù hợp với người thường xuyên đau dạ dày",
         solution: {
-          title: "Trà Dây trung hòa axit",
-          body: "Hoạt chất flavonoid trong Trà Dây Tây Bắc giúp trung hòa dịch vị, làm dịu niêm mạc và giảm cảm giác xót ruột khi nạp caffeine. Uống sau bữa sáng để bảo vệ bao tử êm ái suốt ngày dài.",
+          title: "Đau dạ dày sau khi uống cà phê",
+          body: "Trà Dây làm dịu niêm mạc, trung hòa axit dịch vị. Trà dây từ lâu được y học cổ truyền và hiện đại ghi nhận khả năng hỗ trợ làm lành vết loét, kháng viêm và ức chế vi khuẩn HP — nguyên nhân phổ biến của các vấn đề dạ dày ở người trẻ do thói quen sinh hoạt thất thường và lạm dụng caffeine.",
         },
       },
       {
@@ -112,10 +127,11 @@ export const landing = {
         icon: "HeartPulse",
         iconBg: "#FBE3DC",
         iconColor: "#C03C2A",
-        label: "Bồn Chồn, Lo Âu",
+        label: "Bồn Chồn, Tim Đập Nhanh",
+        fit: "Phù hợp khi cần tỉnh táo nhưng dễ lo âu",
         solution: {
-          title: "Hồng Sâm cân bằng thần kinh",
-          body: "Ginsenoside trong Hồng Sâm 6 năm tuổi điều hòa hệ thần kinh giao cảm, giúp tỉnh táo mà không hồi hộp, không run tay đau đầu. Tinh thần ổn định để tập trung sâu vào công việc.",
+          title: "Bồn chồn, tim đập nhanh",
+          body: "Hồng Sâm cấp năng lượng êm, không gây kích thích quá mức. Khác với caffeine liều cao gây tim đập nhanh và lo âu, hồng sâm cung cấp năng lượng ổn định theo cơ chế tự nhiên, giúp duy trì sự tập trung mà không gây cảm giác hồi hộp hay khó chịu sau khi hết tác dụng.",
         },
       },
       {
@@ -124,23 +140,25 @@ export const landing = {
         iconBg: "#FFF1C2",
         iconColor: "#A57F18",
         label: "Tụt Năng Lượng",
+        fit: "Phù hợp cho ca làm việc dài, ôn thi xuyên đêm",
         solution: {
-          title: "Năng lượng bền bỉ, không sập nguồn",
-          body: "Bộ đôi thảo dược nhả năng lượng từ từ, kéo dài 4-6 giờ tỉnh táo đều đặn. Không còn cảm giác hứng khởi rồi đổ ụp như cà phê đậm đặc — bạn giữ nhịp làm việc bền bỉ cả buổi chiều.",
+          title: "Tỉnh táo rồi tụt năng lượng đột ngột",
+          body: 'Năng lượng ổn định, không có hiện tượng "sập nguồn". Sự kết hợp trà dây và hồng sâm được thiết kế để duy trì sự tỉnh táo xuyên suốt thời gian học tập, làm việc hoặc ôn thi xuyên đêm, hạn chế tình trạng tụt năng lượng đột ngột thường gặp ở nước tăng lực và cà phê đậm đặc.',
         },
       },
       {
-        id: "tra-dang",
+        id: "tra-kho-uong",
         icon: "Coffee",
         iconBg: "#D6E4D1",
         iconColor: "#2D4A2B",
-        label: "Sợ Trà Đắng Quá",
+        label: "Trà Thảo Mộc Khó Uống",
+        fit: "Dễ uống, phù hợp dùng mỗi ngày",
         solution: {
-          title: "Hương vị ngọt dịu tự nhiên",
-          body: "Vị ngọt sâm thanh mát hòa quyện hương trà dây dịu nhẹ — không cần đường, không pha chế cầu kỳ. Một ngụm là yêu, dễ uống cả với người mới bắt đầu chuyển từ cà phê sang trà.",
+          title: "Đã thử trà thảo mộc nhưng khó uống",
+          body: "Vị ngọt thanh tự nhiên từ hồng sâm, dễ uống hằng ngày. Boostra cân bằng giữa vị đắng nhẹ đặc trưng của trà dây và vị ngọt thanh của hồng sâm, mang lại trải nghiệm dễ uống, không nặng vị thuốc — khác với nhiều loại trà thảo mộc truyền thống khó dùng thường xuyên.",
         },
       },
-    ],
+    ] satisfies ProblemItem[],
     defaultPrompt: {
       emoji: "👆",
       title: "Bấm chọn một vấn đề ở trên để xem giải pháp",
@@ -149,65 +167,98 @@ export const landing = {
   },
   brand: {
     leftBadge: "ĐỊNH VỊ THƯƠNG HIỆU",
-    leftHeading: "BOOSTRA = BOOST + TRÀ",
+    leftHeading: "BOOST + TRÀ = BOOSTRA",
+    leftTagline: "Lựa chọn thay thế lành mạnh cho thức uống chứa caffeine",
     leftBody:
-      "Giải pháp thức uống thông minh thay thế caffeine truyền thống, hướng đến thế hệ trẻ hiện đại Gen Z & Gen Y bận rộn, cần năng lượng làm việc bền bỉ nhưng vẫn chú trọng bảo vệ sức khỏe hệ tiêu hóa lâu dài.",
+      "Boostra hướng đến học sinh, sinh viên và nhân viên văn phòng thuộc thế hệ Gen Z và Gen Y — những người cần duy trì sự tỉnh táo mỗi ngày nhưng quan tâm đến sức khỏe hệ tiêu hóa lâu dài.",
     leftQuote:
-      "Tỉnh thức tự nhiên - Chăm sóc dạ dày - Tiện lợi cho lối sống bận rộn.",
-    rightBadge: "THẤU HIỂU KHÁCH HÀNG",
+      '"Chất lượng tạo niềm tin, giá trị tạo sự bền vững." — Triết lý kinh doanh của Boostra',
+    rightBadge: "THẤU HIỂU NGƯỜI TRẺ BẬN RỘN",
     rightHeading: "Năng Lượng Sạch Cho Nhịp Sống Hiện Đại",
     rightBody:
-      "Phần lớn người trẻ hiện nay không có thời gian duy trì chế độ dinh dưỡng lành mạnh, dẫn tới stress và đau dạ dày phổ biến. Trà dây kết hợp hồng sâm ra đời nhằm đáp ứng nhu cầu tích hợp độc đáo: vừa giúp tinh thần tập trung cao độ để học tập và làm việc, vừa bảo vệ bao tử êm ái, thanh nhiệt.",
+      "Áp lực học tập và công việc khiến nhiều người trẻ phụ thuộc vào cà phê hoặc nước tăng lực để duy trì sự tỉnh táo, kéo theo các tác dụng phụ như đau dạ dày, tim đập nhanh, bồn chồn hoặc mệt mỏi sau khi hết tác dụng. Trong khi đó, các loại trà thảo mộc hiện có thường chỉ thiên về thư giãn, an thần — chưa đáp ứng nhu cầu tập trung và năng lượng.",
     callout: {
       emoji: "🍵",
-      lead: "Tiện dụng tối đa:",
-      body: "Quy cách đóng hộp 20 gói tiện dụng. Dễ dàng mang theo đi học, đi làm, pha chế nhanh gọn ngay tại văn phòng mà không cần dụng cụ pha chế phức tạp.",
+      lead: "Tiện lợi tối đa:",
+      body: "Đóng hộp 20 túi lọc riêng biệt, dễ mang theo khi đi học, đi làm. Mỗi túi 5g, pha nhanh trong vài phút, không cần dụng cụ phức tạp.",
     },
+  },
+  ingredients: {
+    badge: "THÀNH PHẦN DƯỢC LIỆU",
+    heading: "Hai dược liệu, một giải pháp cân bằng",
+    items: [
+      {
+        name: "Trà Dây",
+        subtitle: "Nguồn cung: Hội Dòng Mến Thánh Giá Huế — kiểm soát chất lượng",
+        description:
+          "Dược liệu có nguồn gốc từ vùng núi miền Trung Việt Nam, được biết đến với khả năng hỗ trợ hệ tiêu hóa và làm dịu dạ dày.",
+        bullets: [
+          "Hỗ trợ làm lành niêm mạc dạ dày",
+          "Trung hòa axit dịch vị, giảm cảm giác xót ruột",
+          "Hỗ trợ ức chế vi khuẩn HP theo ghi nhận y học",
+          "Thanh nhiệt cơ thể tự nhiên",
+        ],
+        accent: "forest",
+      },
+      {
+        name: "Hồng Sâm",
+        subtitle: "Dược liệu quý — bồi bổ năng lượng tự nhiên",
+        description:
+          "Thành phần giúp cung cấp nguồn năng lượng ổn định, hỗ trợ trí não duy trì sự tập trung trong thời gian dài mà không gây phản ứng phụ thường gặp của caffeine.",
+        bullets: [
+          "Tăng cường năng lượng và sự tỉnh táo",
+          "Cải thiện khả năng tập trung khi học tập, làm việc",
+          "Không gây tim đập nhanh hay bồn chồn",
+          "Vị ngọt thanh tự nhiên, dễ uống",
+        ],
+        accent: "rust",
+      },
+    ] satisfies IngredientItem[],
   },
   benefits: {
     badge: "HIỆU QUẢ SỬ DỤNG",
-    heading: "Lợi Ích Nổi Bật Của Trà Boostra",
+    heading: "Lợi ích nổi bật của Trà Dây Hồng Sâm Boostra",
     items: [
       {
         icon: "Brain",
         title: "Tập trung bền bỉ",
-        body: "Giúp bồi bổ trí não luôn tỉnh táo nhẹ nhàng, tự nhiên suốt ngày dài, không run tay đau đầu.",
+        body: "Hồng sâm hỗ trợ trí não duy trì sự tỉnh táo nhẹ nhàng và tự nhiên suốt buổi học, ca làm việc.",
       },
       {
         icon: "HeartPulse",
-        title: "Bảo vệ bao tử êm ái",
-        body: "Trà Dây trung hòa dịch vị, xóa tan tình trạng xót ruột, cồn cào hay viêm rát bao tử.",
+        title: "Bảo vệ dạ dày êm ái",
+        body: "Trà dây giúp trung hòa dịch vị, làm dịu cảm giác xót ruột, cồn cào do dùng caffeine kéo dài.",
       },
       {
-        icon: "Shield",
-        title: "Ổn định huyết áp",
-        body: "Điều hòa khí huyết nhịp nhàng, kiểm soát nhịp tim ổn định, thanh lọc cơ thể trong lành.",
+        icon: "Activity",
+        title: "Không bồn chồn, lo âu",
+        body: "Năng lượng ổn định từ hồng sâm, không gây tim đập nhanh hay cảm giác hồi hộp như caffeine liều cao.",
       },
       {
         icon: "Coffee",
-        title: "Hương vị ngọt dịu",
-        body: "Không đường hóa học, hậu vị ngọt sâm thanh nhã tạo cảm giác ngon miệng sảng khoái.",
+        title: "Hương vị dễ uống",
+        body: "Không đường tinh luyện, vị đắng nhẹ của trà dây hài hòa với vị ngọt tự nhiên của hồng sâm.",
       },
     ] satisfies BenefitItem[],
   },
   brewing: {
     badge: "HƯỚNG DẪN PHA CHẾ",
-    heading: "3 Bước Ủ Trà Nhanh Chóng",
+    heading: "3 bước ủ trà nhanh chóng",
     steps: [
       {
         n: 1,
         title: "Thả túi lọc",
-        body: "Đặt 1 túi lọc sinh học Boostra vào ly hoặc bình giữ nhiệt.",
+        body: "Đặt 1 túi lọc Boostra (5g) vào ly hoặc bình giữ nhiệt.",
       },
       {
         n: 2,
-        title: "Châm nước",
-        body: "Rót 150ml - 200ml nước ấm nóng (tầm 85°C - 90°C) ngập túi trà.",
+        title: "Châm nước nóng",
+        body: "Rót 150–200ml nước nóng khoảng 85–90°C, ngập túi trà.",
       },
       {
         n: 3,
-        title: "Ủ & Thưởng thức",
-        body: "Đợi 3 - 5 phút để tinh chất sâm dây hòa quyện ngọt lành.",
+        title: "Ủ & thưởng thức",
+        body: "Đợi 3–5 phút để tinh chất trà dây và hồng sâm hòa quyện trọn vẹn.",
       },
     ] satisfies BrewingStep[],
     timer: {
@@ -222,39 +273,33 @@ export const landing = {
       resetLabel: "Đặt Lại",
     },
   },
-  activities: {
-    badge: "TRÁCH NHIỆM DOANH NGHIỆP",
-    heading: "Hoạt Động Doanh Nghiệp & Cộng Đồng",
+  products: {
+    badge: "SẢN PHẨM & KHUYẾN MÃI",
+    heading: "Chọn quy cách phù hợp với bạn",
     items: [
       {
-        tag: { label: "SỐNG XANH", color: "green" },
-        title: 'Chiến Dịch Sinh Thái "Hộp Giấy Tái Sinh"',
-        body: "Sử dụng bao bì sợi ngô sinh học PLA tự hủy của HVL, kết hợp chương trình thu gom rỗng vỏ hộp đổi sen đá xanh.",
-        footer: { label: "Trao tặng: 2000+ Cây xanh", icon: "Leaf" },
+        name: "Hộp Trà Dây Hồng Sâm — 20 túi lọc",
+        badge: { label: "Bán chạy nhất", tone: "gold" },
+        price: "49.000đ / hộp",
+        description:
+          "Mỗi túi 5g, đóng riêng biệt, tiện mang theo đi học, đi làm. Phù hợp cho người mới bắt đầu trải nghiệm hoặc dùng cá nhân hằng ngày.",
+        highlight: true,
       },
       {
-        tag: { label: "HỘI CHỢ F&B", color: "orange" },
-        title: "Hội Chợ Thực Phẩm & Đồ Uống",
-        body: "Boostra tích cực tham gia các hội chợ ẩm thực lớn nhằm quảng bá dòng sản phẩm chăm sóc dạ dày và mang trà dây hồng sâm gần hơn với mọi nhà.",
-        footer: { label: "Quy mô: Toàn quốc", icon: "Utensils" },
+        name: "Hũ Trà Dây Hồng Sâm — 250g",
+        badge: { label: "Dùng lâu dài", tone: "moss" },
+        price: "109.000đ / hũ",
+        description:
+          "Dành cho người dùng lâu dài, tối ưu chi phí trên mỗi lần pha so với cà phê pha sẵn hoặc nước tăng lực. Hũ hình trụ cao cấp, phù hợp làm quà tặng dịp sinh nhật, lễ Tết.",
       },
-      {
-        tag: { label: "TRUYỀN CẢM HỨNG", color: "blue" },
-        title: "Workshop & Talkshow Sức Khỏe",
-        body: "Tổ chức định kỳ talkshow cùng các chuyên gia dinh dưỡng chia sẻ về cách bảo vệ hệ tiêu hóa và nạp năng lượng bền bỉ cho người bận rộn.",
-        footer: { label: "Hỗ trợ: Thế hệ trẻ", icon: "Users" },
-      },
-      {
-        tag: { label: "NÔNG NGHIỆP", color: "gold" },
-        title: "Hỗ Trợ Sinh Kế Nông Hộ Vùng Cao",
-        body: "Hợp tác ổn định cùng bà con nông dân vùng Tây Bắc trong thu hoạch trà dây organic sạch, nâng cao thu nhập và cải thiện chất lượng đời sống vững bền.",
-        footer: { label: "Liên kết: 300+ Nông hộ", icon: "Sprout" },
-      },
-    ] satisfies ActivityItem[],
+    ] satisfies ProductItem[],
+    cta: { label: "Đặt hàng qua Shopee", href: "#" },
+    ctaSecondary: { label: "Đặt hàng qua TikTok Shop", href: "#" },
   },
   footer: {
+    badge: "CỘNG ĐỒNG BOOSTRA",
     tagline:
-      "Thức uống thảo mộc thông minh kết hợp giữa Trà Dây Tây Bắc và Hồng Sâm, nâng cao sự tỉnh táo đồng thời bảo vệ hệ tiêu hóa dạ dày khỏe mạnh.",
+      "Thức uống thảo mộc kết hợp giữa Trà Dây Huế và Hồng Sâm — năng lượng sạch, dạ dày êm, dành cho người trẻ bận rộn.",
     socials: [
       { icon: "Facebook", href: "#", label: "Facebook" },
       { icon: "Instagram", href: "#", label: "Instagram" },
@@ -266,32 +311,24 @@ export const landing = {
         links: [
           { label: "Định vị & Câu chuyện", href: "#gioi-thieu" },
           { label: "Thành phần dược liệu", href: "#thanh-phan" },
-          { label: "Đối tác sản xuất & Vùng trồng", href: "#doi-tac" },
           { label: "Lợi ích sức khỏe", href: "#loi-ich" },
+          { label: "Cách pha chế", href: "#cach-u" },
           { label: "Sản phẩm & Khuyến mãi", href: "#cua-hang" },
-          { label: "Hoạt động doanh nghiệp", href: "#hoat-dong" },
         ],
       },
       contact: {
         heading: "LIÊN HỆ",
         items: [
-          {
-            icon: "MessageCircle",
-            text: "Kênh tư vấn & đặt hàng trực tuyến của Boostra Việt Nam luôn sẵn sàng hỗ trợ khách hàng 24/7.",
-          },
-          {
-            icon: "Globe",
-            text: "Hệ thống phân phối trực tuyến toàn quốc - Hỗ trợ vận chuyển hỏa tốc.",
-          },
-          { icon: "Phone", text: "Hotline hỗ trợ: 1900 68xx (24/7)" },
+          { icon: "ShoppingBag", text: "Công Ty Boostra" },
+          { icon: "MapPin", text: "11 Nguyễn Văn Yến, P. Phú Thạnh, Hồ Chí Minh" },
           { icon: "Mail", text: "Email: lienhe@boostra.vn" },
+          { icon: "ShoppingCart", text: "Đặt hàng qua Shopee & TikTok Shop" },
         ],
       },
     },
-    copyright:
-      "© 2026 Boostra - Bảo lưu mọi bản quyền thuộc Công Ty Cổ Phần Boostra Việt Nam.",
+    copyright: "© 2026 Boostra. Mọi bản quyền thuộc Công Ty Boostra.",
     disclaimer:
-      "Khuyến dùng: Các thông tin hỗ trợ bảo vệ dạ dày và bồi bổ năng lượng được tổng hợp từ nguồn y học cổ truyền uy tín đối với thảo dược Trà Dây, Hồng Sâm, không nhằm mục đích thay thế tư vấn hay chỉ định y khoa chuyên sâu.",
+      "Các thông tin về công dụng của Trà Dây và Hồng Sâm được tổng hợp tham khảo, không nhằm mục đích thay thế tư vấn hoặc chỉ định y khoa chuyên sâu. Vui lòng tham khảo ý kiến chuyên gia y tế nếu bạn có vấn đề sức khỏe đặc biệt.",
   },
 } as const;
 

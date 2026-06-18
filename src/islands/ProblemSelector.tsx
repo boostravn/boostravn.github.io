@@ -80,6 +80,10 @@ export default function ProblemSelector({ items, defaultPrompt }: Props) {
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-(--color-cream)/90">
               {selected.solution.body}
             </p>
+            <p className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-(--color-gold)/90 bg-(--color-gold)/10 border border-(--color-gold)/30 rounded-full px-3 py-1.5">
+              <span aria-hidden="true">✓</span>
+              {selected.fit}
+            </p>
           </>
         ) : (
           <>
