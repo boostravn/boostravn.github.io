@@ -66,6 +66,8 @@ export interface ProductItem {
   highlight?: boolean;
 }
 
+const FacebookLink: string = "https://www.facebook.com/Boostraherbaltea";
+
 export const landing = {
   banner: {
     emoji: "⚡",
@@ -303,17 +305,17 @@ export const landing = {
           "Dành cho người dùng lâu dài, tối ưu chi phí trên mỗi lần pha so với cà phê pha sẵn hoặc nước tăng lực. Hũ hình trụ cao cấp, phù hợp làm quà tặng dịp sinh nhật, lễ Tết.",
       },
     ] satisfies ProductItem[],
-    cta: { label: "Đặt hàng qua Shopee", href: "#" },
-    ctaSecondary: { label: "Đặt hàng qua TikTok Shop", href: "#" },
+    cta: { label: "Liên hệ ngay qua Facebook", href: FacebookLink },
+    // ctaSecondary: { label: "Đặt hàng qua TikTok Shop", href: "#" },
   },
   footer: {
     badge: "CỘNG ĐỒNG BOOSTRA",
     tagline:
       "Thức uống thảo mộc kết hợp giữa Trà Dây Huế và Hồng Sâm — năng lượng sạch, dạ dày êm, dành cho người trẻ bận rộn.",
     socials: [
-      { icon: "Facebook", href: "#", label: "Facebook" },
-      { icon: "Instagram", href: "#", label: "Instagram" },
-      { icon: "Music2", href: "#", label: "TikTok" },
+      { icon: "Facebook", href: FacebookLink, label: "Facebook" },
+      // { icon: "Instagram", href: "#", label: "Instagram" },
+      // { icon: "Music2", href: "#", label: "TikTok" },
     ],
     columns: {
       explore: {
