@@ -67,6 +67,9 @@ export interface ProductItem {
 }
 
 const FacebookLink: string = "https://www.facebook.com/Boostraherbaltea";
+const CompanyName: string = "Công Ty Trà Thảo Mộc Boostra";
+const CompanyAddress: string = "11 Nguyễn Văn Yến, P. Phú Thạnh, Hồ Chí Minh";
+const CompanyEmail: string = "lienhe@boostra.vn";
 
 export const landing = {
   banner: {
@@ -331,14 +334,14 @@ export const landing = {
       contact: {
         heading: "LIÊN HỆ",
         items: [
-          { icon: "ShoppingBag", text: "Công Ty Boostra" },
-          { icon: "MapPin", text: "11 Nguyễn Văn Yến, P. Phú Thạnh, Hồ Chí Minh" },
-          { icon: "Mail", text: "Email: lienhe@boostra.vn" },
-          { icon: "ShoppingCart", text: "Đặt hàng qua Shopee & TikTok Shop" },
+          { icon: "ShoppingBag", text: CompanyName },
+          { icon: "MapPin", text: CompanyAddress },
+          { icon: "Mail", text: `<a href="mailto:${CompanyEmail}">${CompanyEmail}</a>` },
+          { icon: "ShoppingCart", text: `<a href="${FacebookLink}">Đặt hàng qua Facebook</a>` },
         ],
       },
     },
-    copyright: "© 2026 Boostra. Mọi bản quyền thuộc Công Ty Boostra.",
+    copyright: `© 2026 Boostra. Mọi bản quyền thuộc ${CompanyName}.`,
     disclaimer:
       "Các thông tin về công dụng của Trà Dây và Hồng Sâm được tổng hợp tham khảo, không nhằm mục đích thay thế tư vấn hoặc chỉ định y khoa chuyên sâu. Vui lòng tham khảo ý kiến chuyên gia y tế nếu bạn có vấn đề sức khỏe đặc biệt.",
   },
