@@ -80,7 +80,7 @@ const { explore, contact } = footer.columns;
                 <span class="shrink-0 text-(--color-gold) mt-0.5">
                   {Icon ? <Icon size={16} aria-hidden="true" /> : null}
                 </span>
-                <span class="leading-relaxed">{item.text}</span>
+                <span class="leading-relaxed [&_a]:underline [&_a]:underline-offset-2 [&_a]:text-(--color-gold) hover:[&_a]:text-(--color-cream)" set:html={item.text}></span>
               </li>
             );
           })}
