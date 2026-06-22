@@ -15,7 +15,16 @@ const { products } = landing;
       </h2>
     </div>
 
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    <div class="mt-10 rounded-2xl overflow-hidden shadow-[0_20px_50px_-20px_rgba(22,32,24,0.25)]">
+      <img
+        src="/images/product.jpg"
+        alt="Trà Dây Hồng Sâm Boostra — Hộp 20 túi lọc và Hũ 250g"
+        class="w-full h-auto object-cover"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
       {products.items.map((item) => {
         const isHighlight = item.highlight === true;
         const cardStyle = isHighlight

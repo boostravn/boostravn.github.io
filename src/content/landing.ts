@@ -102,7 +102,7 @@ export const landing = {
     product: {
       // Set `image` to swap the placeholder logo for a real product shot.
       // Recommended: 1080×1440 PNG (3:4) with transparent background.
-      image: { src: "/images/product.jpg", alt: "Trà Dây Hồng Sâm Boostra — Hộp 20 túi lọc và Hũ 250g" } as null | { src: string; alt: string },
+      image: null as null | { src: string; alt: string },
       tagTop: "PREMIUM HERB BLEND",
       tagRight: "20 TÚI LỌC",
       title: "Trà Dây Hồng Sâm Thượng Hạng",
