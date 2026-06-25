@@ -70,7 +70,10 @@ export interface ProductVariant {
   price: string;
   description: string;
   image: ProductImage;
+  /** Shown when this variant is active (combo confirmation). */
   savings?: string;
+  /** Shown when the OTHER variant is active (upsell from single to combo). */
+  savingsHint?: string;
 }
 
 export interface ProductItem {
@@ -334,7 +337,8 @@ export const landing = {
               src: "/images/product_2_boxes.jpg",
               alt: "Combo 2 hộp Trà Dây Hồng Sâm Boostra",
             },
-            savings: "Tiết kiệm 8.000đ so với mua lẻ",
+            savings: "Đang tiết kiệm 8.000đ so với mua lẻ",
+            savingsHint: "Mua combo 2 hộp tiết kiệm 8.000đ",
           },
         ],
       },
@@ -365,7 +369,8 @@ export const landing = {
               src: "/images/product_2_packs.jpg",
               alt: "Combo 2 túi Trà Dây Hồng Sâm Boostra",
             },
-            savings: "Tiết kiệm 8.000đ so với mua lẻ",
+            savings: "Đang tiết kiệm 8.000đ so với mua lẻ",
+            savingsHint: "Mua combo 2 túi tiết kiệm 8.000đ",
           },
         ],
       },

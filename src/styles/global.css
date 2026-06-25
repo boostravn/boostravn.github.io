@@ -56,6 +56,17 @@ body {
   .tea-bag-running { animation: none; }
 }
 
+[data-product-card] [data-variant-savings] {
+  background: color-mix(in srgb, var(--color-forest) 8%, transparent);
+  color: color-mix(in srgb, var(--color-forest) 75%, transparent);
+  border-color: color-mix(in srgb, var(--color-forest) 15%, transparent);
+}
+[data-product-card][data-variant="combo"] [data-variant-savings] {
+  background: color-mix(in srgb, var(--color-rust) 12%, transparent);
+  color: var(--color-rust);
+  border-color: color-mix(in srgb, var(--color-rust) 25%, transparent);
+}
+
 .section-eyebrow {
   display: inline-flex;
   align-items: center;

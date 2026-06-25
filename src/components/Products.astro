@@ -94,17 +94,31 @@ const { products } = landing;
               </p>
 
               <p
-                class="mt-4 inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-(--color-rust)/12 text-(--color-rust) border border-(--color-rust)/20 opacity-0 transition-opacity duration-300 [.data-variant-combo_&]:opacity-100"
+                class="mt-4 inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-300"
                 data-variant-savings
               >
-                <span aria-hidden="true">💰</span>
-                <span data-variant-savings-text>{combo.savings ?? ""}</span>
+                <span aria-hidden="true" data-variant-savings-emoji>💰</span>
+                <span data-variant-savings-text>{combo.savingsHint ?? ""}</span>
               </p>
             </div>
 
             <script type="application/json" data-variant-payload={`payload-${item.id}`} set:html={JSON.stringify({
-              single: { name: single.name, price: single.price, description: single.description },
-              combo: { name: combo.name, price: combo.price, description: combo.description, savings: combo.savings ?? "" },
+              single: {
+                name: single.name,
+                price: single.price,
+                description: single.description,
+                savingsText: combo.savingsHint ?? "",
+                savingsEmoji: "💰",
+                savingsTone: "hint",
+              },
+              combo: {
+                name: combo.name,
+                price: combo.price,
+                description: combo.description,
+                savingsText: combo.savings ?? "",
+                savingsEmoji: "✓",
+                savingsTone: "confirm",
+              },
             })} />
           </article>
         );
@@ -125,11 +139,14 @@ const { products } = landing;
 
 <script>
   type VariantKey = "single" | "combo";
+  type SavingsTone = "hint" | "confirm";
   interface VariantPayload {
     name: string;
     price: string;
     description: string;
-    savings?: string;
+    savingsText: string;
+    savingsEmoji: string;
+    savingsTone: SavingsTone;
   }
 
   document.querySelectorAll<HTMLElement>("[data-product-card]").forEach((card) => {
@@ -149,6 +166,10 @@ const { products } = landing;
     const descEl = card.querySelector<HTMLElement>("[data-variant-description]");
     const savingsEl = card.querySelector<HTMLElement>("[data-variant-savings]");
     const savingsText = card.querySelector<HTMLElement>("[data-variant-savings-text]");
+    const savingsEmoji = card.querySelector<HTMLElement>("[data-variant-savings-emoji]");
+
+    if (savingsEmoji) savingsEmoji.textContent = payload.single.savingsEmoji;
+    if (savingsText) savingsText.textContent = payload.single.savingsText;
 
     function activate(key: VariantKey) {
       card.dataset.variant = key;
@@ -165,13 +186,8 @@ const { products } = landing;
       if (nameEl) nameEl.textContent = data.name;
       if (priceEl) priceEl.textContent = data.price;
       if (descEl) descEl.textContent = data.description;
-      const showSavings = key === "combo" && !!data.savings;
-      if (savingsEl) {
-        savingsEl.style.opacity = showSavings ? "1" : "0";
-      }
-      if (savingsText) {
-        savingsText.textContent = data.savings ?? "";
-      }
+      if (savingsEmoji) savingsEmoji.textContent = data.savingsEmoji;
+      if (savingsText) savingsText.textContent = data.savingsText;
 
       if (typeof window !== "undefined" && window.posthog) {
         window.posthog.capture("product_variant_selected", {
