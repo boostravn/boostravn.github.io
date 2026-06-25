@@ -102,7 +102,10 @@ export const landing = {
     product: {
       // Set `image` to swap the placeholder logo for a real product shot.
       // Recommended: 1080×1440 PNG (3:4) with transparent background.
-      image: { src: "/images/product.jpg", alt: "Trà Dây Hồng Sâm Boostra — Hộp 20 túi lọc và Hũ 250g" } as null | { src: string; alt: string },
+      image: {
+        src: "/images/product_2_boxes.jpg",
+        alt: "Combo 2 hộp Trà Dây Hồng Sâm Boostra",
+      } as null | { src: string; alt: string },
       tagTop: "PREMIUM HERB BLEND",
       tagRight: "20 TÚI LỌC",
       title: "Trà Dây Hồng Sâm Thượng Hạng",
@@ -113,7 +116,7 @@ export const landing = {
   },
   problems: {
     badge: "BẠN ĐANG GẶP VẤN ĐỀ GÌ?",
-    heading: "Caffeine giúp tỉnh táo, nhưng cũng để lại hệ lụy",
+    // heading: "Caffeine giúp tỉnh táo, nhưng cũng để lại hệ lụy",
     items: [
       {
         id: "dau-da-day",
@@ -293,15 +296,30 @@ export const landing = {
     heading: "Chọn quy cách phù hợp với bạn",
     items: [
       {
-        name: "Hộp Trà Dây Hồng Sâm — 20 túi lọc",
+        name: "Combo 2 Hộp Trà Dây Hồng Sâm",
         badge: { label: "Bán chạy nhất", tone: "gold" },
-        price: "49.000đ / hộp",
+        price: "90.000đ / 2 hộp",
         description:
           "Mỗi túi 5g, đóng riêng biệt, tiện mang theo đi học, đi làm. Phù hợp cho người mới bắt đầu trải nghiệm hoặc dùng cá nhân hằng ngày.",
         highlight: true,
       },
       {
-        name: "Hũ Trà Dây Hồng Sâm — 250g",
+        name: "Combo 2 Túi Trà Dây Hồng Sâm",
+        badge: { label: "Bán chạy nhất", tone: "gold" },
+        price: "210.000đ / 2 túi",
+        description:
+          "Dành cho người dùng lâu dài, tối ưu chi phí trên mỗi lần pha so với cà phê pha sẵn hoặc nước tăng lực. Hũ hình trụ cao cấp, phù hợp làm quà tặng dịp sinh nhật, lễ Tết.",
+        highlight: true,
+      },
+      {
+        name: "Hộp Trà Dây Hồng Sâm",
+        badge: { label: "Dùng lâu dài", tone: "moss" },
+        price: "49.000đ / hộp",
+        description:
+          "Mỗi túi 5g, đóng riêng biệt, tiện mang theo đi học, đi làm. Phù hợp cho người mới bắt đầu trải nghiệm hoặc dùng cá nhân hằng ngày.",
+      },
+      {
+        name: "Túi Trà Dây Hồng Sâm",
         badge: { label: "Dùng lâu dài", tone: "moss" },
         price: "109.000đ / hũ",
         description:
