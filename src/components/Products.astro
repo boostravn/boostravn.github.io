@@ -54,27 +54,35 @@ const { products } = landing;
             </div>
 
             <div class="p-7 sm:p-9 flex flex-col flex-1">
-              <div
-                role="tablist"
-                aria-label={`Chọn quy cách cho ${single.name}`}
-                class="inline-flex self-start p-1 rounded-full bg-(--color-forest)/8 border border-(--color-forest)/10"
-                data-variant-tabs
-              >
-                {item.variants.map((v) => {
-                  const key = v.qty === 1 ? "single" : "combo";
-                  const isDefault = key === "single";
-                  return (
-                    <button
-                      type="button"
-                      role="tab"
-                      data-variant-tab={key}
-                      aria-selected={isDefault ? "true" : "false"}
-                      class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-(--color-forest)/70 aria-selected:bg-(--color-forest) aria-selected:text-(--color-cream) aria-selected:shadow-sm transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-(--color-forest) focus-visible:outline-offset-2"
-                    >
-                      {v.qtyLabel}
-                    </button>
-                  );
-                })}
+              <div class="flex flex-wrap items-center gap-3">
+                <div
+                  role="tablist"
+                  aria-label={`Chọn quy cách cho ${single.name}`}
+                  class="inline-flex p-1 rounded-full bg-(--color-forest)/8 border border-(--color-forest)/10"
+                  data-variant-tabs
+                >
+                  {item.variants.map((v) => {
+                    const key = v.qty === 1 ? "single" : "combo";
+                    const isDefault = key === "single";
+                    return (
+                      <button
+                        type="button"
+                        role="tab"
+                        data-variant-tab={key}
+                        aria-selected={isDefault ? "true" : "false"}
+                        class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-(--color-forest)/70 aria-selected:bg-(--color-forest) aria-selected:text-(--color-cream) aria-selected:shadow-sm transition-colors focus:outline-none focus-visible:outline-2 focus-visible:outline-(--color-forest) focus-visible:outline-offset-2"
+                      >
+                        {v.qtyLabel}
+                      </button>
+                    );
+                  })}
+                </div>
+                <span
+                  class="text-xs sm:text-sm font-medium text-(--color-forest)/70 tabular-nums"
+                  data-variant-spec
+                >
+                  {single.spec}
+                </span>
               </div>
 
               <div class="mt-5 flex items-center justify-between gap-3 flex-wrap">
@@ -105,6 +113,7 @@ const { products } = landing;
             <script type="application/json" data-variant-payload={`payload-${item.id}`} set:html={JSON.stringify({
               single: {
                 name: single.name,
+                spec: single.spec,
                 price: single.price,
                 description: single.description,
                 savingsText: combo.savingsHint ?? "",
@@ -113,6 +122,7 @@ const { products } = landing;
               },
               combo: {
                 name: combo.name,
+                spec: combo.spec,
                 price: combo.price,
                 description: combo.description,
                 savingsText: combo.savings ?? "",
@@ -142,6 +152,7 @@ const { products } = landing;
   type SavingsTone = "hint" | "confirm";
   interface VariantPayload {
     name: string;
+    spec: string;
     price: string;
     description: string;
     savingsText: string;
@@ -162,6 +173,7 @@ const { products } = landing;
     const tabs = card.querySelectorAll<HTMLButtonElement>("[data-variant-tab]");
     const images = card.querySelectorAll<HTMLImageElement>("[data-variant-image]");
     const nameEl = card.querySelector<HTMLElement>("[data-variant-name]");
+    const specEl = card.querySelector<HTMLElement>("[data-variant-spec]");
     const priceEl = card.querySelector<HTMLElement>("[data-variant-price]");
     const descEl = card.querySelector<HTMLElement>("[data-variant-description]");
     const savingsEl = card.querySelector<HTMLElement>("[data-variant-savings]");
@@ -184,6 +196,7 @@ const { products } = landing;
       });
       const data = payload[key];
       if (nameEl) nameEl.textContent = data.name;
+      if (specEl) specEl.textContent = data.spec;
       if (priceEl) priceEl.textContent = data.price;
       if (descEl) descEl.textContent = data.description;
       if (savingsEmoji) savingsEmoji.textContent = data.savingsEmoji;

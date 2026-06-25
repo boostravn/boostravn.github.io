@@ -66,6 +66,8 @@ export interface ProductImage {
 export interface ProductVariant {
   qty: 1 | 2;
   qtyLabel: string;
+  /** Spec line shown under the toggle (e.g. "100g · 20 túi lọc"). */
+  spec: string;
   name: string;
   price: string;
   description: string;
@@ -317,7 +319,8 @@ export const landing = {
           {
             qty: 1,
             qtyLabel: "1 hộp",
-            name: "Hộp Trà Dây Hồng Sâm — 20 túi lọc",
+            spec: "20 túi · 100g",
+            name: "Hộp Trà Dây Hồng Sâm",
             price: "49.000đ",
             description:
               "Mỗi túi 5g, đóng riêng biệt, tiện mang theo đi học, đi làm. Phù hợp cho người mới bắt đầu trải nghiệm hoặc dùng cá nhân hằng ngày.",
@@ -329,7 +332,8 @@ export const landing = {
           {
             qty: 2,
             qtyLabel: "Combo 2 hộp",
-            name: "Combo 2 Hộp Trà Dây Hồng Sâm — 40 túi lọc",
+            spec: "40 túi · 200g",
+            name: "Combo 2 Hộp Trà Dây Hồng Sâm",
             price: "90.000đ",
             description:
               "Mua đôi tiết kiệm hơn. Đủ dùng cả tháng cho dân văn phòng hoặc chia sẻ với đồng nghiệp, người thân.",
@@ -349,19 +353,21 @@ export const landing = {
           {
             qty: 1,
             qtyLabel: "1 túi",
-            name: "Túi Trà Dây Hồng Sâm — 200g",
+            spec: "250g",
+            name: "Túi Trà Dây Hồng Sâm",
             price: "109.000đ",
             description:
-              "Túi giấy kraft khóa kéo 200g, giữ trọn hương trà dây và hồng sâm. Tối ưu chi phí mỗi lần pha, phù hợp người dùng lâu dài.",
+              "Túi giấy kraft khóa kéo 250g, giữ trọn hương trà dây và hồng sâm. Tối ưu chi phí mỗi lần pha, phù hợp người dùng lâu dài.",
             image: {
               src: "/images/product_1_pack.jpg",
-              alt: "Túi Trà Dây Hồng Sâm Boostra 200g",
+              alt: "Túi Trà Dây Hồng Sâm Boostra 250g",
             },
           },
           {
             qty: 2,
             qtyLabel: "Combo 2 túi",
-            name: "Combo 2 Túi Trà Dây Hồng Sâm — 400g",
+            spec: "500g",
+            name: "Combo 2 Túi Trà Dây Hồng Sâm",
             price: "210.000đ",
             description:
               "Dùng được khoảng 2 tháng cho gia đình hoặc làm quà tặng người thân. Mua đôi tiết kiệm hơn.",
