@@ -349,18 +349,58 @@ export default function TeaTimer({ labels }: Props) {
         ) : (
           <>
             <div className="mt-8 flex justify-center" aria-hidden="true">
-              <svg
-                width="72"
-                height="84"
-                viewBox="0 0 72 84"
-                fill="none"
-                className={status === "running" ? "tea-bag-running" : ""}
-              >
-                <path d="M36 6v18" stroke="#F4D35E" strokeWidth="1.5" strokeLinecap="round" />
-                <rect x="18" y="24" width="36" height="44" rx="6" fill="#1E3024" stroke="#F4D35E" strokeWidth="2" />
-                <path d="M22 38h28M22 48h28M22 58h28" stroke="#7BA05B" strokeWidth="1.2" strokeLinecap="round" />
-                <path d="M30 14l6-8 6 8" stroke="#F4D35E" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-              </svg>
+              <div className="relative">
+                {status === "running" && (
+                  <svg
+                    width="72"
+                    height="40"
+                    viewBox="0 0 72 40"
+                    className="absolute -top-9 left-1/2 -translate-x-1/2 pointer-events-none"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      className="tea-steam"
+                      data-stream="1"
+                      d="M24 38 Q26 28, 22 20 Q18 12, 22 4"
+                      stroke="#F4D35E"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      opacity="0.7"
+                    />
+                    <path
+                      className="tea-steam"
+                      data-stream="2"
+                      d="M36 38 Q38 28, 34 20 Q30 12, 34 4"
+                      stroke="#F4D35E"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      opacity="0.7"
+                    />
+                    <path
+                      className="tea-steam"
+                      data-stream="3"
+                      d="M48 38 Q50 28, 46 20 Q42 12, 46 4"
+                      stroke="#F4D35E"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      opacity="0.7"
+                    />
+                  </svg>
+                )}
+                <svg
+                  width="72"
+                  height="84"
+                  viewBox="0 0 72 84"
+                  fill="none"
+                  className={status === "running" ? "tea-bag-running" : ""}
+                >
+                  <path d="M36 6v18" stroke="#F4D35E" strokeWidth="1.5" strokeLinecap="round" />
+                  <rect x="18" y="24" width="36" height="44" rx="6" fill="#1E3024" stroke="#F4D35E" strokeWidth="2" />
+                  <path d="M22 38h28M22 48h28M22 58h28" stroke="#7BA05B" strokeWidth="1.2" strokeLinecap="round" />
+                  <path d="M30 14l6-8 6 8" stroke="#F4D35E" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                </svg>
+              </div>
             </div>
 
             <div

@@ -1,0 +1,66 @@
+---
+import { landing } from "../content/landing";
+import { ShoppingBag, MessageCircle } from "lucide-react";
+
+const { finalCta } = landing;
+---
+<section
+  class="relative isolate overflow-hidden bg-(--color-forest-deep) text-(--color-cream)"
+  aria-labelledby="final-cta-heading"
+>
+  <svg
+    class="absolute -top-px left-0 w-full text-(--color-cream-soft)"
+    viewBox="0 0 1440 80"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    style="height: 60px;"
+  >
+    <path
+      fill="currentColor"
+      d="M0,0 L0,40 C160,72 320,8 480,28 C640,48 800,72 960,52 C1120,32 1280,8 1440,28 L1440,0 Z"
+    />
+  </svg>
+
+  <div aria-hidden="true" class="pointer-events-none absolute -left-12 top-24 text-(--color-leaf)/15 hidden md:block">
+    <svg width="220" height="220" viewBox="0 0 60 60" fill="currentColor">
+      <path d="M10 30c0-15 12-22 28-24-2 18-12 28-28 28z" />
+    </svg>
+  </div>
+  <div aria-hidden="true" class="pointer-events-none absolute -right-10 -bottom-10 text-(--color-leaf)/15 rotate-180 hidden md:block">
+    <svg width="180" height="180" viewBox="0 0 60 60" fill="currentColor">
+      <path d="M10 30c0-15 12-22 28-24-2 18-12 28-28 28z" />
+    </svg>
+  </div>
+
+  <div class="relative max-w-[1100px] mx-auto px-6 py-20 lg:py-24 text-center">
+    <span class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-[0.18em] uppercase bg-(--color-gold)/15 text-(--color-gold) border border-(--color-gold)/40">
+      {finalCta.eyebrow}
+    </span>
+    <h2
+      id="final-cta-heading"
+      class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] text-(--color-cream) max-w-3xl mx-auto"
+    >
+      {finalCta.heading}
+    </h2>
+    <p class="mt-5 text-base sm:text-lg leading-relaxed text-(--color-cream)/80 max-w-2xl mx-auto">
+      {finalCta.body}
+    </p>
+
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a
+        href={finalCta.primary.href}
+        class="inline-flex items-center gap-2 bg-(--color-gold) hover:bg-(--color-gold-deep) text-(--color-forest) font-semibold px-7 py-3.5 rounded-full transition-colors focus-ring-gold shadow-[0_15px_40px_-15px_rgba(244,211,94,0.55)]"
+      >
+        <ShoppingBag size={18} aria-hidden="true" />
+        {finalCta.primary.label}
+      </a>
+      <a
+        href={finalCta.secondary.href}
+        class="inline-flex items-center gap-2 bg-transparent border border-(--color-cream)/40 hover:border-(--color-cream) hover:bg-(--color-cream)/10 text-(--color-cream) font-semibold px-7 py-3.5 rounded-full transition-colors focus-ring-gold"
+      >
+        <MessageCircle size={18} aria-hidden="true" />
+        {finalCta.secondary.label}
+      </a>
+    </div>
+  </div>
+</section>

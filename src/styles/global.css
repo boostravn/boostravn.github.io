@@ -51,9 +51,24 @@ body {
   transform-origin: top center;
 }
 
+@keyframes tea-steam-rise {
+  0% { transform: translateY(0) scaleX(1); opacity: 0; }
+  20% { opacity: 0.7; }
+  100% { transform: translateY(-28px) scaleX(1.4); opacity: 0; }
+}
+
+.tea-steam {
+  animation: tea-steam-rise 2.4s ease-out infinite;
+  transform-origin: bottom center;
+  transform-box: fill-box;
+}
+.tea-steam[data-stream="2"] { animation-delay: 0.8s; }
+.tea-steam[data-stream="3"] { animation-delay: 1.6s; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .tea-bag-running { animation: none; }
+  .tea-steam { animation: none; opacity: 0; }
 }
 
 [data-product-card] [data-variant-savings] {

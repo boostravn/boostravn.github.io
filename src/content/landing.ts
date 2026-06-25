@@ -384,6 +384,13 @@ export const landing = {
     cta: { label: "Liên hệ ngay qua Facebook", href: FacebookLink },
     // ctaSecondary: { label: "Đặt hàng qua TikTok Shop", href: "#" },
   },
+  finalCta: {
+    eyebrow: "BẮT ĐẦU NHỊP SỐNG MỚI",
+    heading: "Sẵn sàng đổi cà phê lấy Boostra?",
+    body: "Một ngụm tỉnh thức tự nhiên — dạ dày êm ái, đầu óc minh mẫn, ngày dài bền bỉ. Đặt thử hôm nay để cảm nhận khác biệt.",
+    primary: { label: "Đặt hàng ngay", href: "#cua-hang" },
+    secondary: { label: "Nhắn qua Facebook", href: FacebookLink },
+  },
   footer: {
     badge: "CỘNG ĐỒNG BOOSTRA",
     tagline:
