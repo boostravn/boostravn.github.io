@@ -58,12 +58,19 @@ export interface IngredientItem {
   accent: "forest" | "rust";
 }
 
+export interface ProductImage {
+  src: string;
+  alt: string;
+}
+
 export interface ProductItem {
   name: string;
   badge: { label: string; tone: "gold" | "moss" };
   price: string;
   description: string;
   highlight?: boolean;
+  image?: ProductImage;
+  hoverImage?: ProductImage;
 }
 
 const FacebookLink: string = "https://www.facebook.com/Boostraherbaltea";
@@ -299,13 +306,29 @@ export const landing = {
         description:
           "Mỗi túi 5g, đóng riêng biệt, tiện mang theo đi học, đi làm. Phù hợp cho người mới bắt đầu trải nghiệm hoặc dùng cá nhân hằng ngày.",
         highlight: true,
+        image: {
+          src: "/images/product_1_box.jpg",
+          alt: "Hộp Trà Dây Hồng Sâm Boostra 20 túi lọc",
+        },
+        hoverImage: {
+          src: "/images/product_2_boxes.jpg",
+          alt: "Combo 2 hộp Trà Dây Hồng Sâm Boostra",
+        },
       },
       {
-        name: "Hũ Trà Dây Hồng Sâm — 250g",
+        name: "Túi Trà Dây Hồng Sâm — 200g",
         badge: { label: "Dùng lâu dài", tone: "moss" },
-        price: "109.000đ / hũ",
+        price: "109.000đ / túi",
         description:
-          "Dành cho người dùng lâu dài, tối ưu chi phí trên mỗi lần pha so với cà phê pha sẵn hoặc nước tăng lực. Hũ hình trụ cao cấp, phù hợp làm quà tặng dịp sinh nhật, lễ Tết.",
+          "Túi giấy kraft khóa kéo 200g, giữ trọn hương trà dây và hồng sâm. Tối ưu chi phí mỗi lần pha so với cà phê pha sẵn hay nước tăng lực, phù hợp người dùng lâu dài.",
+        image: {
+          src: "/images/product_1_pack.jpg",
+          alt: "Túi Trà Dây Hồng Sâm Boostra 200g",
+        },
+        hoverImage: {
+          src: "/images/product_2_packs.jpg",
+          alt: "Combo 2 túi Trà Dây Hồng Sâm Boostra",
+        },
       },
     ] satisfies ProductItem[],
     cta: { label: "Liên hệ ngay qua Facebook", href: FacebookLink },

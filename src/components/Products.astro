@@ -29,19 +29,43 @@ const { products } = landing;
             ? "bg-(--color-gold) text-(--color-forest)"
             : "bg-(--color-forest)/10 text-(--color-forest)";
         return (
-          <article class={`relative rounded-3xl border-2 ${cardStyle} p-7 sm:p-9 flex flex-col text-(--color-forest)`}>
-            <div class="flex items-center justify-between gap-3">
-              <span class={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-[0.1em] uppercase ${badgeStyle}`}>
-                {item.badge.label}
-              </span>
-              <span class={`text-2xl sm:text-3xl font-bold ${priceColor}`}>{item.price}</span>
+          <article class={`group relative rounded-3xl border-2 overflow-hidden ${cardStyle} flex flex-col text-(--color-forest)`}>
+            {item.image && (
+              <div class="relative aspect-[4/3] bg-(--color-cream) overflow-hidden">
+                <img
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  class={`absolute inset-0 w-full h-full object-contain p-5 transition-opacity duration-500 ${item.hoverImage ? "group-hover:opacity-0" : ""}`}
+                  loading="lazy"
+                />
+                {item.hoverImage && (
+                  <img
+                    src={item.hoverImage.src}
+                    alt={item.hoverImage.alt}
+                    class="absolute inset-0 w-full h-full object-contain p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    loading="lazy"
+                    aria-hidden="true"
+                  />
+                )}
+                <span class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-(--color-forest)/55 bg-(--color-cream-strong)/85 backdrop-blur-sm px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  Combo 2
+                </span>
+              </div>
+            )}
+            <div class="p-7 sm:p-9 flex flex-col flex-1">
+              <div class="flex items-center justify-between gap-3">
+                <span class={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-bold tracking-[0.1em] uppercase ${badgeStyle}`}>
+                  {item.badge.label}
+                </span>
+                <span class={`text-2xl sm:text-3xl font-bold ${priceColor}`}>{item.price}</span>
+              </div>
+              <h3 class="mt-6 text-xl sm:text-2xl font-bold leading-snug">
+                {item.name}
+              </h3>
+              <p class="mt-3 text-sm sm:text-[15px] leading-relaxed text-(--color-forest)/80 flex-1">
+                {item.description}
+              </p>
             </div>
-            <h3 class="mt-6 text-xl sm:text-2xl font-bold leading-snug">
-              {item.name}
-            </h3>
-            <p class="mt-3 text-sm sm:text-[15px] leading-relaxed text-(--color-forest)/80 flex-1">
-              {item.description}
-            </p>
           </article>
         );
       })}
