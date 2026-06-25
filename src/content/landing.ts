@@ -63,14 +63,21 @@ export interface ProductImage {
   alt: string;
 }
 
-export interface ProductItem {
+export interface ProductVariant {
+  qty: 1 | 2;
+  qtyLabel: string;
   name: string;
-  badge: { label: string; tone: "gold" | "moss" };
   price: string;
   description: string;
+  image: ProductImage;
+  savings?: string;
+}
+
+export interface ProductItem {
+  id: string;
+  badge: { label: string; tone: "gold" | "moss" };
   highlight?: boolean;
-  image?: ProductImage;
-  hoverImage?: ProductImage;
+  variants: [ProductVariant, ProductVariant];
 }
 
 const FacebookLink: string = "https://www.facebook.com/Boostraherbaltea";
@@ -120,7 +127,7 @@ export const landing = {
   },
   problems: {
     badge: "BẠN ĐANG GẶP VẤN ĐỀ GÌ?",
-    heading: "Caffeine giúp tỉnh táo, nhưng cũng để lại hệ lụy",
+    // heading: "Caffeine giúp tỉnh táo, nhưng cũng để lại hệ lụy",
     items: [
       {
         id: "dau-da-day",
@@ -300,35 +307,67 @@ export const landing = {
     heading: "Chọn quy cách phù hợp với bạn",
     items: [
       {
-        name: "Hộp Trà Dây Hồng Sâm — 20 túi lọc",
+        id: "hop",
         badge: { label: "Bán chạy nhất", tone: "gold" },
-        price: "49.000đ / hộp",
-        description:
-          "Mỗi túi 5g, đóng riêng biệt, tiện mang theo đi học, đi làm. Phù hợp cho người mới bắt đầu trải nghiệm hoặc dùng cá nhân hằng ngày.",
         highlight: true,
-        image: {
-          src: "/images/product_1_box.jpg",
-          alt: "Hộp Trà Dây Hồng Sâm Boostra 20 túi lọc",
-        },
-        hoverImage: {
-          src: "/images/product_2_boxes.jpg",
-          alt: "Combo 2 hộp Trà Dây Hồng Sâm Boostra",
-        },
+        variants: [
+          {
+            qty: 1,
+            qtyLabel: "1 hộp",
+            name: "Hộp Trà Dây Hồng Sâm — 20 túi lọc",
+            price: "49.000đ",
+            description:
+              "Mỗi túi 5g, đóng riêng biệt, tiện mang theo đi học, đi làm. Phù hợp cho người mới bắt đầu trải nghiệm hoặc dùng cá nhân hằng ngày.",
+            image: {
+              src: "/images/product_1_box.jpg",
+              alt: "Hộp Trà Dây Hồng Sâm Boostra 20 túi lọc",
+            },
+          },
+          {
+            qty: 2,
+            qtyLabel: "Combo 2 hộp",
+            name: "Combo 2 Hộp Trà Dây Hồng Sâm — 40 túi lọc",
+            price: "90.000đ",
+            description:
+              "Mua đôi tiết kiệm hơn. Đủ dùng cả tháng cho dân văn phòng hoặc chia sẻ với đồng nghiệp, người thân.",
+            image: {
+              src: "/images/product_2_boxes.jpg",
+              alt: "Combo 2 hộp Trà Dây Hồng Sâm Boostra",
+            },
+            savings: "Tiết kiệm 8.000đ so với mua lẻ",
+          },
+        ],
       },
       {
-        name: "Túi Trà Dây Hồng Sâm — 200g",
+        id: "tui",
         badge: { label: "Dùng lâu dài", tone: "moss" },
-        price: "109.000đ / túi",
-        description:
-          "Túi giấy kraft khóa kéo 200g, giữ trọn hương trà dây và hồng sâm. Tối ưu chi phí mỗi lần pha so với cà phê pha sẵn hay nước tăng lực, phù hợp người dùng lâu dài.",
-        image: {
-          src: "/images/product_1_pack.jpg",
-          alt: "Túi Trà Dây Hồng Sâm Boostra 200g",
-        },
-        hoverImage: {
-          src: "/images/product_2_packs.jpg",
-          alt: "Combo 2 túi Trà Dây Hồng Sâm Boostra",
-        },
+        variants: [
+          {
+            qty: 1,
+            qtyLabel: "1 túi",
+            name: "Túi Trà Dây Hồng Sâm — 200g",
+            price: "109.000đ",
+            description:
+              "Túi giấy kraft khóa kéo 200g, giữ trọn hương trà dây và hồng sâm. Tối ưu chi phí mỗi lần pha, phù hợp người dùng lâu dài.",
+            image: {
+              src: "/images/product_1_pack.jpg",
+              alt: "Túi Trà Dây Hồng Sâm Boostra 200g",
+            },
+          },
+          {
+            qty: 2,
+            qtyLabel: "Combo 2 túi",
+            name: "Combo 2 Túi Trà Dây Hồng Sâm — 400g",
+            price: "210.000đ",
+            description:
+              "Dùng được khoảng 2 tháng cho gia đình hoặc làm quà tặng người thân. Mua đôi tiết kiệm hơn.",
+            image: {
+              src: "/images/product_2_packs.jpg",
+              alt: "Combo 2 túi Trà Dây Hồng Sâm Boostra",
+            },
+            savings: "Tiết kiệm 8.000đ so với mua lẻ",
+          },
+        ],
       },
     ] satisfies ProductItem[],
     cta: { label: "Liên hệ ngay qua Facebook", href: FacebookLink },
