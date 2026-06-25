@@ -325,7 +325,7 @@ export const landing = {
             description:
               "Mỗi túi 5g, đóng riêng biệt, tiện mang theo đi học, đi làm. Phù hợp cho người mới bắt đầu trải nghiệm hoặc dùng cá nhân hằng ngày.",
             image: {
-              src: "/images/product_1_box.jpg",
+              src: "/images/product_1_box.png",
               alt: "Hộp Trà Dây Hồng Sâm Boostra 20 túi lọc",
             },
           },
@@ -338,7 +338,7 @@ export const landing = {
             description:
               "Mua đôi tiết kiệm hơn. Đủ dùng cả tháng cho dân văn phòng hoặc chia sẻ với đồng nghiệp, người thân.",
             image: {
-              src: "/images/product_2_boxes.jpg",
+              src: "/images/product_2_boxes.png",
               alt: "Combo 2 hộp Trà Dây Hồng Sâm Boostra",
             },
             savings: "Đang tiết kiệm 8.000đ so với mua lẻ",
@@ -359,7 +359,7 @@ export const landing = {
             description:
               "Túi giấy kraft khóa kéo 250g, giữ trọn hương trà dây và hồng sâm. Tối ưu chi phí mỗi lần pha, phù hợp người dùng lâu dài.",
             image: {
-              src: "/images/product_1_pack.jpg",
+              src: "/images/product_1_pack.png",
               alt: "Túi Trà Dây Hồng Sâm Boostra 250g",
             },
           },
@@ -372,7 +372,7 @@ export const landing = {
             description:
               "Dùng được khoảng 2 tháng cho gia đình hoặc làm quà tặng người thân. Mua đôi tiết kiệm hơn.",
             image: {
-              src: "/images/product_2_packs.jpg",
+              src: "/images/product_2_packs.png",
               alt: "Combo 2 túi Trà Dây Hồng Sâm Boostra",
             },
             savings: "Đang tiết kiệm 8.000đ so với mua lẻ",
