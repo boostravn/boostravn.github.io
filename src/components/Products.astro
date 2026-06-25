@@ -101,13 +101,13 @@ const { products } = landing;
                 {single.description}
               </p>
 
-              <p
-                class="mt-4 inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-300"
-                data-variant-savings
-              >
-                <span aria-hidden="true" data-variant-savings-emoji>💰</span>
-                <span data-variant-savings-text>{combo.savingsHint ?? ""}</span>
-              </p>
+              <!-- <p -->
+              <!--   class="mt-4 inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold border transition-colors duration-300" -->
+              <!--   data-variant-savings -->
+              <!-- > -->
+              <!--   <span aria-hidden="true" data-variant-savings-emoji>💰</span> -->
+              <!--   <span data-variant-savings-text>{combo.savingsHint ?? ""}</span> -->
+              <!-- </p> -->
             </div>
 
             <script type="application/json" data-variant-payload={`payload-${item.id}`} set:html={JSON.stringify({
