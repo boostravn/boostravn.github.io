@@ -266,23 +266,28 @@ export const landing = {
     ] satisfies BenefitItem[],
   },
   brewing: {
-    badge: "HƯỚNG DẪN PHA CHẾ",
-    heading: "3 bước ủ trà nhanh chóng",
+    badge: "HƯỚNG DẪN SỬ DỤNG",
+    heading: "Pha Nhanh Tíc Tắc",
     steps: [
       {
         n: 1,
-        title: "Thả túi lọc",
-        body: "Đặt 1 túi lọc Boostra (5g) vào ly hoặc bình giữ nhiệt.",
+        title: "",
+        body: "Đưa 1 túi lọc trà qua nước sôi trong vòng 10s",
       },
       {
         n: 2,
-        title: "Châm nước nóng",
-        body: "Rót 150–200ml nước nóng khoảng 85–90°C, ngập túi trà.",
+        title: "",
+        body: "Thả túi vào ly/bình nước của bạn",
       },
       {
         n: 3,
-        title: "Ủ & thưởng thức",
-        body: "Đợi 3–5 phút để tinh chất trà dây và hồng sâm hòa quyện trọn vẹn.",
+        title: "",
+        body: "Tự do pha chế tỉ lệ nước sôi và nước lạnh phù hợp",
+      },
+      {
+        n: 4,
+        title: "",
+        body: "Mời bạn dùng trà thật ngon miệng!",
       },
     ] satisfies BrewingStep[],
     timer: {
