@@ -391,7 +391,8 @@ export const landing = {
   },
   finalCta: {
     eyebrow: "BẮT ĐẦU NHỊP SỐNG MỚI",
-    heading: "Sẵn sàng đổi cà phê lấy Boostra?",
+    // heading: "Sẵn sàng đổi cà phê lấy Boostra?",
+    heading: "Thưởng thức ngay một tách trà dây hồng sâm",
     body: "Một ngụm tỉnh thức tự nhiên — dạ dày êm ái, đầu óc minh mẫn, ngày dài bền bỉ. Đặt thử hôm nay để cảm nhận khác biệt.",
     primary: { label: "Đặt hàng ngay", href: "#cua-hang" },
     secondary: { label: "Nhắn qua Facebook", href: FacebookLink },
