@@ -38,12 +38,14 @@ const { finalCta } = landing;
     </span>
     <h2
       id="final-cta-heading"
-      class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] text-(--color-cream) max-w-3xl mx-auto"
+      class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.15] text-(--color-cream) max-w-4xl mx-auto"
     >
       {finalCta.heading}
     </h2>
-    <p class="mt-5 text-base sm:text-lg leading-relaxed text-(--color-cream)/80 max-w-2xl mx-auto">
-      {finalCta.body}
+    <p class="mt-5 text-base sm:text-lg leading-relaxed text-(--color-cream)/80 max-w-3xl mx-auto">
+      {finalCta.bodyFirstLine}
+      <br>
+      {finalCta.bodyNextLine}
     </p>
 
     <div class="mt-8 flex flex-wrap items-center justify-center gap-3">

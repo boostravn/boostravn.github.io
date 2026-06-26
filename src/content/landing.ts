@@ -196,7 +196,7 @@ export const landing = {
     leftBody:
       "Boostra hướng đến học sinh, sinh viên và nhân viên văn phòng thuộc thế hệ Gen Z và Gen Y — những người cần duy trì sự tỉnh táo mỗi ngày nhưng quan tâm đến sức khỏe hệ tiêu hóa lâu dài.",
     leftQuote:
-      '"Chất lượng tạo niềm tin, giá trị tạo sự bền vững." — Triết lý kinh doanh của Boostra',
+      '"Lấy khách hàng làm trung tâm, lấy giá trị làm nền tảng." — Triết lý kinh doanh của Boostra',
     rightBadge: "THẤU HIỂU NGƯỜI TRẺ BẬN RỘN",
     rightHeading: "Năng Lượng Sạch Cho Nhịp Sống Hiện Đại",
     rightBody:
@@ -393,7 +393,8 @@ export const landing = {
     eyebrow: "BẮT ĐẦU NHỊP SỐNG MỚI",
     // heading: "Sẵn sàng đổi cà phê lấy Boostra?",
     heading: "Thưởng thức ngay một tách trà dây hồng sâm",
-    body: "Một ngụm tỉnh thức tự nhiên — dạ dày êm ái, đầu óc minh mẫn, ngày dài bền bỉ. Đặt thử hôm nay để cảm nhận khác biệt.",
+    bodyFirstLine: "Một ngụm tỉnh thức tự nhiên — dạ dày êm ái, đầu óc minh mẫn, ngày dài bền bỉ",
+    bodyNextLine: "Đặt thử hôm nay để cảm nhận khác biệt.",
     primary: { label: "Đặt hàng ngay", href: "#cua-hang" },
     secondary: { label: "Nhắn qua Facebook", href: FacebookLink },
   },
