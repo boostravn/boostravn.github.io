@@ -101,7 +101,7 @@ export const landing = {
       { label: "Giới Thiệu", href: "#gioi-thieu" },
       { label: "Thành Phần", href: "#thanh-phan" },
       { label: "Lợi Ích", href: "#loi-ich" },
-      { label: "Cách Ủ", href: "#cach-u" },
+      { label: "Hướng Dẫn Pha Chế", href: "#cach-pha-che" },
       { label: "Cửa Hàng", href: "#cua-hang" },
     ],
     cta: { label: "Mua Ngay", href: "#cua-hang" },
