@@ -414,7 +414,7 @@ export const landing = {
           { label: "Định vị & Câu chuyện", href: "#gioi-thieu" },
           { label: "Thành phần dược liệu", href: "#thanh-phan" },
           { label: "Lợi ích sức khỏe", href: "#loi-ich" },
-          { label: "Cách pha chế", href: "#cach-u" },
+          { label: "Cách pha chế", href: "#cach-pha-che" },
           { label: "Sản phẩm & Khuyến mãi", href: "#cua-hang" },
         ],
       },
