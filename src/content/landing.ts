@@ -121,7 +121,7 @@ export const landing = {
     product: {
       // Set `image` to swap the placeholder logo for a real product shot.
       // Recommended: 1080×1440 PNG (3:4) with transparent background.
-      image: { src: "/images/product.jpg", alt: "Trà Dây Hồng Sâm Boostra — Hộp 20 túi lọc và Hũ 250g" } as null | { src: string; alt: string },
+      image: { src: "/images/product.jpg", alt: "Trà Dây Hồng Sâm Boostra — Hộp 20 túi lọc và Hũ 200g" } as null | { src: string; alt: string },
       tagTop: "PREMIUM HERB BLEND",
       tagRight: "20 TÚI LỌC",
       title: "Trà Dây Hồng Sâm Thượng Hạng",
@@ -358,20 +358,20 @@ export const landing = {
           {
             qty: 1,
             qtyLabel: "1 túi",
-            spec: "250g",
+            spec: "200g",
             name: "Túi Trà Dây Hồng Sâm",
             price: "109.000đ",
             description:
-              "Túi giấy kraft khóa kéo 250g, giữ trọn hương trà dây và hồng sâm. Tối ưu chi phí mỗi lần pha, phù hợp người dùng lâu dài.",
+              "Túi giấy kraft khóa kéo 200g, giữ trọn hương trà dây và hồng sâm. Tối ưu chi phí mỗi lần pha, phù hợp người dùng lâu dài.",
             image: {
               src: "/images/product_1_pack.png",
-              alt: "Túi Trà Dây Hồng Sâm Boostra 250g",
+              alt: "Túi Trà Dây Hồng Sâm Boostra 200g",
             },
           },
           {
             qty: 2,
             qtyLabel: "Combo 2 túi",
-            spec: "500g",
+            spec: "400g",
             name: "Combo 2 Túi Trà Dây Hồng Sâm",
             price: "210.000đ",
             description:
