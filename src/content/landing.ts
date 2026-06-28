@@ -186,13 +186,13 @@ export const landing = {
     defaultPrompt: {
       emoji: "👆",
       title: "Bấm chọn một vấn đề ở trên để xem giải pháp",
-      body: "Tìm hiểu ngay cách hoạt chất thiên nhiên của Trà Dây & Hồng Sâm từ Boostra khắc phục triệt để các tác dụng phụ khó chịu của caffeine thông thường.",
+      body: "Tìm hiểu ngay cách hoạt chất thiên nhiên của Trà Dây & Hồng Sâm từ Boostra.",
     },
   },
   brand: {
     leftBadge: "ĐỊNH VỊ THƯƠNG HIỆU",
     leftHeading: "BOOST + TRÀ = BOOSTRA",
-    leftTagline: "Lựa chọn thay thế lành mạnh cho thức uống chứa caffeine",
+    // leftTagline: "Lựa chọn thay thế lành mạnh cho thức uống chứa caffeine",
     leftBody:
       "Boostra hướng đến học sinh, sinh viên và nhân viên văn phòng thuộc thế hệ Gen Z và Gen Y — những người cần duy trì sự tỉnh táo mỗi ngày nhưng quan tâm đến sức khỏe hệ tiêu hóa lâu dài.",
     leftQuote:
@@ -201,11 +201,11 @@ export const landing = {
     rightHeading: "Năng Lượng Sạch Cho Nhịp Sống Hiện Đại",
     rightBody:
       "Áp lực học tập và công việc khiến nhiều người trẻ phụ thuộc vào cà phê hoặc nước tăng lực để duy trì sự tỉnh táo, kéo theo các tác dụng phụ như đau dạ dày, tim đập nhanh, bồn chồn hoặc mệt mỏi sau khi hết tác dụng. Trong khi đó, các loại trà thảo mộc hiện có thường chỉ thiên về thư giãn, an thần — chưa đáp ứng nhu cầu tập trung và năng lượng.",
-    callout: {
-      emoji: "🍵",
-      lead: "Tiện lợi tối đa:",
-      body: "Đóng hộp 20 túi lọc riêng biệt, dễ mang theo khi đi học, đi làm. Mỗi túi 5g, pha nhanh trong vài phút, không cần dụng cụ phức tạp.",
-    },
+    // callout: {
+    //   emoji: "🍵",
+    //   lead: "Tiện lợi tối đa:",
+    //   body: "Đóng hộp 20 túi lọc riêng biệt, dễ mang theo khi đi học, đi làm. Mỗi túi 5g, pha nhanh trong vài phút, không cần dụng cụ phức tạp.",
+    // },
   },
   ingredients: {
     badge: "THÀNH PHẦN DƯỢC LIỆU",
@@ -324,7 +324,7 @@ export const landing = {
           {
             qty: 1,
             qtyLabel: "1 hộp",
-            spec: "20 túi · 100g",
+            spec: "20 túi lọc",
             name: "Hộp Trà Dây Hồng Sâm",
             price: "49.000đ",
             description:
@@ -337,7 +337,7 @@ export const landing = {
           {
             qty: 2,
             qtyLabel: "Combo 2 hộp",
-            spec: "40 túi · 200g",
+            spec: "40 túi lọc",
             name: "Combo 2 Hộp Trà Dây Hồng Sâm",
             price: "90.000đ",
             description:
