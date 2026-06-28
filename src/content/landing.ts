@@ -303,8 +303,8 @@ export const landing = {
       celebrate: {
         title: "Trà đã sẵn sàng!",
         body: "Bạn đã chờ đủ — hãy thưởng cho mình bằng ưu đãi nhỏ này.",
-        promoLabel: "Mã giảm 10% cho đơn đầu tiên",
-        promoCode: "TINHTHUC10",
+        promoLabel: "Mã giảm 15% cho đơn đầu tiên",
+        promoCode: "TINHTHUC15",
         copyLabel: "Sao chép mã",
         copiedLabel: "Đã sao chép ✓",
         ctaLabel: "Dùng ngay",
