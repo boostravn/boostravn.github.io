@@ -123,7 +123,7 @@ export const landing = {
       // Recommended: 1080×1440 PNG (3:4) with transparent background.
       image: { src: "/images/product.jpg", alt: "Trà Dây Hồng Sâm Boostra — Hộp 20 túi lọc và Hũ 200g" } as null | { src: string; alt: string },
       tagTop: "PREMIUM HERB BLEND",
-      tagRight: "20 TÚI LỌC",
+      // tagRight: "20 TÚI LỌC",
       title: "Trà Dây Hồng Sâm Thượng Hạng",
       footer: "Tỉnh thức tự nhiên • Êm dịu dạ dày",
       sticker: "Vị ngọt sâm thanh mát, cực ngon!",
